@@ -1,17 +1,21 @@
-function home(navigateTo) {
+export function home(navigateTo) {
     const section = document.createElement('section');
     const title = document.createElement('h2');
     const button = document.createElement('button');
+    const imgMujeres = document.createElement('img');
+    imgMujeres.setAttribute("class","image1")
+    
+    imgMujeres.src="img/Mujer -Space_-2.png";
+    
   
-    button.textContent = 'login';
+    button.textContent = 'entrar';
     button.addEventListener('click', () => {
       navigateTo('/login');
     });
   
-    title.textContent = 'Welcome to my project';
+    title.textContent = 'Bienvenidas a Mujer -Space-';
   
-    section.append(title, button);
+    section.append(title, button, imgMujeres);
     return section;
   }
   
-  export default home;

@@ -1,22 +1,24 @@
-// Este es el punto de entrada de tu aplicacion
+
+
 
 import { myFunction } from './lib/index.js';
-import  login  from './elements/login.js';
+import { login}  from './elements/login.js';
 //import { firebase } from '.firebase.js';
-import  error  from './elements/error.js';
-import  register  from './elements/register.js';
-import  home  from './elements/home.js';
+import { error}  from './elements/error.js';
+// import  {register}  from './elements/register.js';
+import { home } from './elements/home.js';
 
 const routes = [
-    { path: '/', component: home },
+    { path: '/', component: login},
     { path: '/login', component: login },
+    { path: '/wall', component: home },
     { path: '/error', component: error },
-    { path: '/register', component: register },
+    // { path: '/register', component: register },
     //{ path: '/firebase', component: firebase },
   ];
 
-  const defaultRoute = '/';
-const root = document.getElementById('root');
+//   const defaultRoute = '/';
+// const root = document.getElementById('root');
 
 function navigateTo(hash) {
   const route = routes.find((routeFound) => routeFound.path === hash);
