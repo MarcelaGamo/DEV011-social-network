@@ -12,6 +12,7 @@ body {
   background-attachment: fixed;
    background-size: 85%; /*tamaño punta cafe   */
  }
+ 
 .flex {
   display: flex;
   align-items: center;
@@ -39,13 +40,16 @@ h2{
     margin: 0em 4em 1em 6em;
     font-size: 2.5rem;
 }
-p{
+.slogan{
     margin: -1em 6em 15em -2em;
 }
-.image1{
+.image1 {
+  max-width: 140%; /* La imagen no será más ancha que su contenedor */
+  height: auto; /* La altura se ajustará proporcionalmente al ancho */
   margin: -50em 5em -11em -15em;
-  width: 150%;
+  /* width: 140%; */
 }
+
 form {
   display: flex;
   flex-direction: column;
@@ -61,19 +65,20 @@ form input {
   width: 100%;
   border: 1px solid #CD9B81;
   border-radius: 6px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   font-size: 1rem;
   padding: 0 14px;
 }
 
 
-.link {
+/* .link {
   display: flex;
   flex-direction: column;
   text-align: center;
   gap: 15px;
-}
-.link .login {
+} */
+
+.login {
   border: none;
   outline: none;
   cursor: pointer;
@@ -86,24 +91,32 @@ form input {
   font-weight: 500;
   transition: 0.2s ease;
 }
-.link .login:hover {
+.login:hover {
   background: #F4EFFD;
-  border: 2px solid #CD9B81;
-} */
+  border: 1.5px solid #0b0b0a;
+} 
  .google-button {
   position: relative;
 } 
 
-.google {
-  width: 10%;
+/* .google {
+  width: 11%;
   margin-bottom: 0%;
-}
+} */
 
-.google {
-  /* position: absolute; */
-  left: 300px;  /*Ajusta la posición izquierda según tus preferencias */
-  top: 50%;
-  transform: translateY(-180%);
+/* .google {
+  /* position: absolute; 
+  left: 10px;  /*Ajusta la posición izquierda según tus preferencias */
+  /* top: 50%;
+  transform: translateY(-120%); */
+  
+  .google {
+    position: flex;
+    left: 50%; /* Centra el elemento horizontalmente */
+    top: 50%; /* Centra el elemento verticalmente */
+    transform: translate(70%, -120%); /* Centra el elemento precisamente */
+    width: 11%; /* Ajusta el ancho en porcentaje */
+    max-width: 200px; /* Establece un límite máximo de ancho */
 }
 hr {
   border: none;
@@ -112,22 +125,29 @@ hr {
   margin-bottom: 20px;
   margin-top: 20px;
 }
-.button {
-  margin-top: 25px;
-  text-align: center;
-  margin-bottom: 20px;
+
+.or{
+  margin: 0.3em 4em 0.3em 7em;
+    font-size: 1.5rem;
 }
-.button a {
-  padding: 15px 20px;
+
+.newac {
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.newac {
+  padding: 11px 11px;
+  size: 5%;
   background: #fff;
   border-radius: 6px;
   border: 2px solid #CD9B81;
   color: #0F0D0D;
   font-size: 0.5xsrem;
-  font-weight: 500;
+  font-weight: 400;
   transition: 0.2s ease;
 }
-.button a:hover {
+.newac:hover {
   background: #CD9B81;
 }  
 
@@ -142,6 +162,25 @@ hr {
 
   .mujeres-page .text {
     margin-bottom: 30px;
+  }
+  .image1 {
+    display: relative;
+    max-width: 120%; /* La imagen no será más ancha que su contenedor */
+    height: auto; /* La altura se ajustará proporcionalmente al ancho */
+    margin: -50em 5em -12em -15em;
+    /* width: 140%; */
+}
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-size: 100%; /* Ajusta el tamaño de la imagen para pantallas pequeñas */
+  }
+  .image1 {
+      max-width: 120%; /* La imagen no será más ancha que su contenedor */
+      height: auto; /* La altura se ajustará proporcionalmente al ancho */
+      margin: -50em 5em -15em -15em;
+      /* width: 140%; */
   }
 }
 
