@@ -22,31 +22,28 @@ export function login(navigateTo) {
     slogan.setAttribute('class','slogan')
     slogan.textContent = 'Conectadas las Mujeres de todo el mundo';
     
-
     const imgMujeres = document.createElement('img');
     imgMujeres.setAttribute ('alt','mujer')
     imgMujeres.setAttribute('class','image1')
     imgMujeres.src="img/Mujer -Space_-2.png";
-
 
     const links = document.createElement('form');
     links.setAttribute('action', '#');
 
     const inputEmail = document.createElement('input');
     inputEmail.setAttribute ('type', 'email')
+    inputEmail.setAttribute ('id', 'email1')
     inputEmail.placeholder = 'Email';
     inputEmail.required ="email";
     
-
     const inputPassword = document.createElement('input');
     inputPassword.setAttribute('type', 'password');
+    inputPassword.setAttribute('id', 'password1');
     inputPassword.placeholder = 'Password';
-    inputPassword.required ="passwo";
+    inputPassword.required ="password";
     
-
     const linkButton = document.createElement ("div");
     linkButton.setAttribute("class", "link")
-
 
     const buttonLogin = document.createElement('button');
     buttonLogin.setAttribute ('type', 'submit');
@@ -62,35 +59,32 @@ export function login(navigateTo) {
     buttonGoogle.setAttribute('class', 'login google-button');
     buttonGoogle.textContent = 'Continuar con Google';
     
-
     const imgGoogle = document.createElement('img');
     imgGoogle.setAttribute('class', 'google');
     imgGoogle.setAttribute('alt', 'logo-google');
     imgGoogle.src="img/logo_google_icon_143197.png";
-
 
     const container4 = document.createElement('div');
     container4.setAttribute('class', 'button');
 
     const buttonNewAccount = document.createElement('a')
     buttonNewAccount.setAttribute('href','#')
+    buttonNewAccount.setAttribute('class','newac')
     buttonNewAccount.textContent = 'Crear cuenta';
     buttonNewAccount.addEventListener('click', () => {
       navigateTo('/register');
 
-    
-
-    });
-  container3.append(titleP1, titleP2, slogan, imgMujeres);
-  // linkButton.append();
   
+    });
+
+
+  container3.append(titleP1, titleP2, slogan, imgMujeres);
   container4.append (buttonNewAccount);
   links.append(inputEmail, inputPassword, buttonLogin, or, buttonGoogle,imgGoogle, buttonNewAccount);
   container2.append (container3, linkButton, container4, links);
   container1.append(container2);
  
     
-
     console.log(container1);
     return container1;
   }
