@@ -1,4 +1,6 @@
 //  export register;
+import { createUserWithEmailAndPassword  } from "firebase/auth";
+import { doc } from "firebase/firestore";
 
  export function register(navigateTo) {
 
@@ -32,17 +34,21 @@
 
  const links = document.createElement('form');
  links.setAttribute('action', '#');
+ links.setAttribute('class', 'allRegister');
 
  const inputEmail = document.createElement('input');
  inputEmail.setAttribute ('type', 'email')
- inputEmail.placeholder = 'Email';
- inputEmail.required ="email";
+ inputEmail.setAttribute ('class', 'email2')
+ inputEmail.placeholder = 'Registrate con tu Email';
+ inputEmail.required ="Registrate con tu Email";
  
 
  const inputPassword = document.createElement('input');
  inputPassword.setAttribute('type', 'password');
- inputPassword.placeholder = 'Password';
- inputPassword.required ="password";
+ inputPassword.setAttribute('class', 'password2');
+
+ inputPassword.placeholder = 'Crea tu Password';
+ inputPassword.required ="Crea tu Password";
  
 
  const linkButton = document.createElement ("div");
@@ -52,7 +58,11 @@
  const buttonLogin = document.createElement('button');
  buttonLogin.setAttribute ('type', 'submit');
  buttonLogin.setAttribute ('class', 'login');
- buttonLogin.textContent = 'Crear Cuenta';
+ buttonLogin.setAttribute ('onclick', 'createUser');
+ buttonLogin.textContent = 'Registrarse';
+buttonLogin.addEventListener('click', () => {
+  buttonLogin.navigateTo('/home');
+ });
 
 const span = document.createElement("span");
 span.classList.add('span-login');
@@ -70,5 +80,28 @@ container1.append(container2);
 };
 
 
+// buttonLogin.addEventListener('click', () => {
+//     const email = email2.value;
+//     const password = password2.value;
+//       createAccountFunction(email, password)
+//         .then(() => {
+//           navigateTo('/login');
+//         })
+//         .catch((errorCode) => {
+//           errorMessage.style.display = 'block';
+//           if (errorCode === 'auth/invalid-email') {
+//             errorMessage.append = 'Correo invalido';
+//         //   } else if (errorCode === 'auth/weak-password') {
+//         //     errorMessage.innerHTML = 'La contraseña requiere mínimo 6 caracteres';
+//         //   } else if (errorCode === 'auth/email-already-in-use') {
+//         //     errorMessage.innerHTML = 'El correo ingresado ya esta registrado';
+//         //   } else if (errorCode === 'auth/missing-password') {
+//         //     errorMessage.innerHTML = 'Olvidaste escribir una contraseña';
+//         //   }
+//         };
+//     });
+ 
 
+//  return container1;
+// });
 

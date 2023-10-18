@@ -1,5 +1,9 @@
-import { getAuth, createUserWithEmailAndPassword , sendSignInLinkToEmail, signInWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged,  } from "firebase/auth";
-
+import { getAuth } from "firebase/auth";
+import { createUserWithEmailAndPassword  } from "firebase/auth";
+import { sendSignInLinkToEmail } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth";
+import { onAuthStateChanged} from "firebase/auth";
 
 // //Creación cuenta y contraseña-----
 

@@ -1,12 +1,9 @@
-
-
-
 import { myFunction } from './lib/index.js';
 import { login}  from './elements/login.js';
-//import { firebase } from '.firebase.js';
 import { error}  from './elements/error.js';
 import  {register}  from './elements/register.js';
 import { home } from './elements/home.js';
+
 
 const routes = [
     { path: '/', component: login},
@@ -46,3 +43,17 @@ window.onpopstate = () => {
 navigateTo(window.location.pathname || defaultRoute);
 
 //myFunction();
+
+// function createUser(){
+
+//   const email = document.getElementById ("email2").Value;
+//   const password = document.getElementById ("password2").Value;
+//   firebase.auth().createUserWhitEmailAndPassword()
+//   .then(res =>{
+//     alert("se registro correctamente")
+
+//   }).catch(err=>{
+//     alert("ocurrio un error");
+//   });
+
+// };
