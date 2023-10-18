@@ -5,7 +5,7 @@ import { myFunction } from './lib/index.js';
 import { login}  from './elements/login.js';
 //import { firebase } from '.firebase.js';
 import { error}  from './elements/error.js';
-// import  {register}  from './elements/register.js';
+import  {register}  from './elements/register.js';
 import { home } from './elements/home.js';
 
 const routes = [
@@ -13,7 +13,7 @@ const routes = [
     { path: '/login', component: login },
     { path: '/wall', component: home },
     { path: '/error', component: error },
-    // { path: '/register', component: register },
+    { path: '/register', component: register },
     //{ path: '/firebase', component: firebase },
   ];
 
