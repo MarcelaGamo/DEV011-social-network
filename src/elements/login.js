@@ -41,6 +41,7 @@ export function login(navigateTo) {
     const inputPassword = document.createElement('input');
     inputPassword.setAttribute('type', 'password');
     inputPassword.placeholder = 'Password';
+    inputPassword.required ="passwo";
     
 
     const linkButton = document.createElement ("div");
@@ -58,10 +59,10 @@ export function login(navigateTo) {
 
     const buttonGoogle = document.createElement('button');
     buttonGoogle.setAttribute('type', 'submit');
-    buttonGoogle.setAttribute('class', 'login google-butto');
+    buttonGoogle.setAttribute('class', 'login google-button');
     buttonGoogle.textContent = 'Continuar con Google';
+    
 
-   
     const imgGoogle = document.createElement('img');
     imgGoogle.setAttribute('class', 'google');
     imgGoogle.setAttribute('alt', 'logo-google');
@@ -77,11 +78,14 @@ export function login(navigateTo) {
     buttonNewAccount.addEventListener('click', () => {
       navigateTo('/register');
 
+    
+
     });
   container3.append(titleP1, titleP2, slogan, imgMujeres);
-  linkButton.append(buttonLogin, or, buttonGoogle, imgGoogle);
+  // linkButton.append();
+  
   container4.append (buttonNewAccount);
-  links.append(inputEmail, inputPassword, linkButton, container4);
+  links.append(inputEmail, inputPassword, buttonLogin, or, buttonGoogle,imgGoogle, buttonNewAccount);
   container2.append (container3, linkButton, container4, links);
   container1.append(container2);
  
@@ -91,4 +95,29 @@ export function login(navigateTo) {
     return container1;
   }
   
- 
+
+//   import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
+// const auth = getAuth();
+// signInWithEmailAndPassword(auth, email, password)
+//   .then((userCredential) => {
+//     // Signed in 
+//     const user = userCredential.user;
+//     // ...
+//   })
+//   .catch((error) => {
+//     const errorCode = error.code;
+//     const errorMessage = error.message;
+//   });
+
+
+
+//   import { GoogleAuthProvider } from "firebase/auth";
+// const provider = new GoogleAuthProvider();
+
+
+
+// import { getAuth, signInWithRedirect } from "firebase/auth";
+
+// const auth = getAuth();
+// signInWithRedirect(auth, provider);
