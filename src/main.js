@@ -1,8 +1,9 @@
 import { myFunction } from './lib/index.js';
 import { login}  from './elements/login.js';
 import { error}  from './elements/error.js';
-import  {register}  from './elements/register.js';
+import { register }  from './elements/register.js';
 import { home } from './elements/home.js';
+
 
 
 const routes = [
@@ -41,6 +42,8 @@ window.onpopstate = () => {
 };
 
 navigateTo(window.location.pathname || defaultRoute);
+
+
 
 //myFunction();
 
