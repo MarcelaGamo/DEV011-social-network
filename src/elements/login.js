@@ -1,3 +1,4 @@
+import {authGoogle, loginEmail} from '../auth.js';
 export function login(navigateTo) {
  
   const container1 = document.createElement('div');
@@ -49,6 +50,19 @@ export function login(navigateTo) {
   buttonLogin.setAttribute ('class', 'login');
   buttonLogin.textContent = 'Entrar';
 
+  buttonLogin.addEventListener('click', (event) => {
+		event.preventDefault();
+      loginEmail (inputEmail.value, inputPassword.value)
+      .then(response => {
+        if (response) {
+          console.log(response)
+        };
+        navigateTo('/wall')
+      }) 
+      
+	});
+
+
   const or = document.createElement('a');
   or.setAttribute('class', "or");
   or.textContent = 'ó';
@@ -57,6 +71,14 @@ export function login(navigateTo) {
   buttonGoogle.setAttribute('type', 'submit');
   buttonGoogle.setAttribute('class', 'login google-button');
   buttonGoogle.textContent = 'Continuar con Google';
+
+  buttonGoogle.addEventListener('click', (event) => {
+		//event.preventDefault();
+		  authGoogle()
+     .then ( (response) => {
+        navigateTo('/wall')
+     });
+	});
   
   const imgGoogle = document.createElement('img');
   imgGoogle.setAttribute('class', 'google');
