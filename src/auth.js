@@ -9,7 +9,7 @@ import { onAuthStateChanged} from "firebase/auth";
 
 const auth = getAuth();
 
-export const createUserWithEmailAndPassword =(email, password)
+export const newUser =(email, password)
 createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
@@ -74,32 +74,32 @@ createUserWithEmailAndPassword(auth, email, password)
 
 
 
-// //require---------
-// var firebase = require('firebase');
-// var firebaseui = require('firebaseui');
+//require---------
+var firebase = require('firebase');
+var firebaseui = require('firebaseui');
 
 
-// // Initialize the FirebaseUI Widget using Firebase.
-// var ui = new firebaseui.auth.AuthUI(firebase.auth());
+// Initialize the FirebaseUI Widget using Firebase.
+var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
 
-// //-----Dirección de correo electrónico y contraseña-----
-// ui.start('#firebaseui-auth-container', {
-//     signInOptions: [
-//       firebase.auth.EmailAuthProvider.PROVIDER_ID
-//     ],
-//     // Other config options...
-//   });
+//-----Dirección de correo electrónico y contraseña-----
+ui.start('#firebaseui-auth-container', {
+    signInOptions: [
+      firebase.auth.EmailAuthProvider.PROVIDER_ID
+    ],
+    // Other config options...
+  });
 
 
-// // ---- Proveedores de OAuth ------
-//   ui.start('#firebaseui-auth-container', {
-//     signInOptions: [
-//       // List of OAuth providers supported.
-//       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-//       firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-//       firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-//       firebase.auth.GithubAuthProvider.PROVIDER_ID
-//     ],
-//     // Other config options...
-//   });
+// ---- Proveedores de OAuth ------
+  ui.start('#firebaseui-auth-container', {
+    signInOptions: [
+      // List of OAuth providers supported.
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+      firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+      firebase.auth.GithubAuthProvider.PROVIDER_ID
+    ],
+    // Other config options...
+  });

@@ -22,3 +22,4 @@ const app = initializeApp(firebaseConfig);
 console.log(app);
 const bdates =getFirestore (app)
 const auth= getAuth (firebaseApp);
+
