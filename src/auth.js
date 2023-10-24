@@ -17,13 +17,13 @@ export const NewUser = (email, password) => {
       const errorMessage = error.message;
       console.log(error);
       if (errorCode === 'auth/invalid-email') {
-        alert('Correo invalido' + errorMessage);
+        alert('Correo invalido');
       } else if (errorCode === 'auth/email-already-in-use') {
         alert('Correo registrado');
       } else if (errorCode === 'auth/weak-password') {
         alert('La contraseña debe ser minímo de 6 caracteres');
       } else {
-        alert("Ocurrió un error: " + errorMessage);
+        alert("Ocurrió un error ");
       }
       // ..
     });
