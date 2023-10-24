@@ -9,13 +9,22 @@ export const NewUser = (email, password) => {
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
+      alert("Registro exitoso");
       return user // ...
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      alert("Ocurrio un error " + errorMessage)
       console.log(error);
+      if (errorCode === 'auth/invalid-email') {
+        alert('Correo invalido' + errorMessage);
+      } else if (errorCode === 'auth/email-already-in-use') {
+        alert('Correo registrado');
+      } else if (errorCode === 'auth/weak-password') {
+        alert('La contraseña debe ser minímo de 6 caracteres');
+      } else {
+        alert("Ocurrió un error: " + errorMessage);
+      }
       // ..
     });
 }
@@ -44,7 +53,7 @@ export const authGoogle = () => {
 
 
 
-export const loginEmail = (email,password) => {
+export const loginEmail = (email, password) => {
 return signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
@@ -55,5 +64,14 @@ return signInWithEmailAndPassword(auth, email, password)
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+    if (errorCode === 'auth/invalid-email') {
+      alert("Correo invalido");
+    } else if (errorCode === 'auth/invalid-login-credentials') {
+      alert("Correo o contraseña incorrecta");
+    } else if (errorCode === 'auth/missing-password') {
+      alert("Ingresar contraseña");
+    } else {
+        alert("Ocurrió un error: " + errorMessage);
+    }
   });
 }

@@ -34,13 +34,13 @@ export function login(navigateTo) {
   inputEmail.setAttribute ('type', 'email')
   inputEmail.setAttribute ('id', 'email1')
   inputEmail.placeholder = 'Email';
-  inputEmail.required ="email";
+  inputEmail.required = true;
   
   const inputPassword = document.createElement('input');
   inputPassword.setAttribute('type', 'password');
   inputPassword.setAttribute('id', 'password1');
   inputPassword.placeholder = 'Password';
-  inputPassword.required ="password";
+  inputPassword.required = true;
   
   const linkButton = document.createElement ("div");
   linkButton.setAttribute("class", "link")
@@ -51,15 +51,17 @@ export function login(navigateTo) {
   buttonLogin.textContent = 'Entrar';
 
   buttonLogin.addEventListener('click', (event) => {
-		event.preventDefault();
-      loginEmail (inputEmail.value, inputPassword.value)
-      .then(response => {
-        if (response) {
-          console.log(response)
-        };
+    event.preventDefault();
+    console.log(event)
+    loginEmail (inputEmail.value, inputPassword.value)
+    .then(response => {
+      if (response) {
+        console.log(response);
         navigateTo('/wall')
-      }) 
-      
+      } else {
+        mensajeError('Correo o contraseña incorrecta');
+      } 
+    });
 	});
 
 
@@ -73,11 +75,14 @@ export function login(navigateTo) {
   buttonGoogle.textContent = 'Continuar con Google';
 
   buttonGoogle.addEventListener('click', (event) => {
-		//event.preventDefault();
-		  authGoogle()
-     .then ( (response) => {
+		event.preventDefault();
+		authGoogle()
+    .then ( (response) => {
+      if (response) {
+        console.log(response);
         navigateTo('/wall')
-     });
+      }
+    });
 	});
   
   const imgGoogle = document.createElement('img');

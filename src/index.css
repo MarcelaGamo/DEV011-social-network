@@ -12,7 +12,6 @@ body {
   background-attachment: fixed;
    background-size: 85%; /*tamaño punta cafe   */
  }
- 
 .flex {
   display: flex;
   align-items: center;
@@ -49,7 +48,6 @@ h2{
   margin: -50em 5em -11em -15em;
   /* width: 140%; */
 }
-
 form {
   display: flex;
   flex-direction: column;
@@ -69,15 +67,12 @@ form input {
   font-size: 1rem;
   padding: 0 14px;
 }
-
-
 /* .link {
   display: flex;
   flex-direction: column;
   text-align: center;
   gap: 15px;
 } */
-
 .login {
   border: none;
   outline: none;
@@ -93,23 +88,20 @@ form input {
 }
 .login:hover {
   background: #F4EFFD;
-  border: 1.5px solid #0b0b0a;
-} 
+  border: 1.5px solid #0B0B0A;
+}
  .google-button {
   position: relative;
-} 
-
+}
 /* .google {
   width: 11%;
   margin-bottom: 0%;
 } */
-
 /* .google {
-  /* position: absolute; 
+  /* position: absolute;
   left: 10px;  /*Ajusta la posición izquierda según tus preferencias */
   /* top: 50%;
   transform: translateY(-120%); */
-  
   .google {
     position: flex;
     left: 50%; /* Centra el elemento horizontalmente */
@@ -125,12 +117,10 @@ hr {
   margin-bottom: 20px;
   margin-top: 20px;
 }
-
 .or{
   margin: 0.3em 4em 0.3em 7em;
     font-size: 1.5rem;
 }
-
 .newac {
   margin-top: 10px;
   text-align: center;
@@ -149,17 +139,50 @@ hr {
 }
 .newac:hover {
   background: #CD9B81;
-}  
-
+}
+ /*HOME*/
+.mujeres2 {
+  size: 5%;
+}
+.post-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #F7EBBB;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.post-title,
+.post-content {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.post-content {
+  height: 100px;
+}
+.post-button {
+  padding: 10px 20px;
+  background-color: #CFBEFA;
+  color: #131212;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+.post-button:hover {
+  background-color: #672913a0;
+}
 /*----------RESPONSIVE----------------*/
-
-
  @media (max-width: 900px) {
   .mujeres-page {
     flex-direction: column;
     text-align: center;
   }
-
   .mujeres-page .text {
     margin-bottom: 30px;
   }
@@ -171,7 +194,6 @@ hr {
     /* width: 140%; */
 }
 }
-
 @media screen and (max-width: 768px) {
   body {
     background-size: 100%; /* Ajusta el tamaño de la imagen para pantallas pequeñas */
@@ -183,17 +205,14 @@ hr {
       /* width: 140%; */
   }
 }
-
 @media (max-width: 460px) {
   .mujeres-page h1 {
     font-size: 3.5rem;
   }
-
   .mujeres-page p {
     font-size: 1.3rem;
   }
-
   form {
     padding: 15px;
   }
-} 
+}
