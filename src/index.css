@@ -7,10 +7,10 @@
 }
 body {
   background-image: url('img/Mujer -Space_-4.png'); /* Reemplaza 'ruta/de/la/imagen.jpg' con la ruta de tu imagen*/
-  background-size: cover;
+  /* background-size: cover; */
   background-repeat: no-repeat;
   background-attachment: fixed;
-   background-size: 85%; /*tamaño punta cafe   */
+  background-size: 85%; /*tamaño punta cafe   */
  }
 .flex {
   display: flex;
@@ -80,7 +80,7 @@ form input {
   gap: 15px;
 } */
 .login {
-  border: none;
+  /* border: none; */
   outline: none;
   cursor: pointer;
   background: #CD9B81;
@@ -131,18 +131,17 @@ hr {
   margin-top: 10px;
   text-align: center;
   margin-bottom: 10px;
-}
-.newac {
   padding: 11px 11px;
   size: 5%;
   background: #fff;
   border-radius: 6px;
   border: 2px solid #CD9B81;
   color: #0F0D0D;
-  font-size: 0.5xsrem;
+  font-size: 1.2em;
   font-weight: 400;
   transition: 0.2s ease;
 }
+
 .newac:hover {
   background: #CD9B81;
 }
@@ -165,7 +164,7 @@ hr {
   display: flex;
   align-items: center;
   max-width: 600px;
-  margin: 70px auto;
+  /* margin: 70px auto; */
   background-color: #F7EBBB;
   padding: 50px;
   border-radius: 9px;
@@ -231,10 +230,6 @@ hr {
 
 .buttonexit:hover {
   background-color: #bb3c0ea0;
-}
-
-.post-container-inner {
-  position: relative;
 }
 
 /* Estilos para el contenedor de la publicación */
