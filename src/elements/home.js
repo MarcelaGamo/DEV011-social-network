@@ -34,17 +34,17 @@ export function home(navigateTo) {
   postButton.setAttribute('class', 'post-button');
   postButton.textContent = 'Publicar';
   postButton.addEventListener('click', () => {
-    const title = postTitle.value;
-    const content = postContent.value;
+    // const title = postTitle.value;
+    // const content = postContent.value;
     // Aquí puedes implementar la lógica para publicar el post
   });
 
   // // Icono de Eliminar
   // const deleteIcon = document.createElement('img');
   // deleteIcon.classList.add('delete-icon');
-  // deleteIcon.src = '/img/eliminar.png'; 
+  // deleteIcon.src = '/img/eliminar.png';
   // deleteIcon.addEventListener('click', () => {
- 
+
   // });
 
   // // Icono de Like
@@ -65,12 +65,10 @@ export function home(navigateTo) {
 
   const postContainerInner = document.createElement('div');
   postContainerInner.setAttribute('class', 'post-container-inner');
-  postContainerInner.append( postTitle, postContent, postButton);
+  postContainerInner.append(postTitle, postContent, postButton);
 
   postContainer.append(postContainerInner);
 
   section.append(title, buttonExit, imgMujeres1, postContainer);
   return section;
 }
-
-//hola
