@@ -41,6 +41,8 @@ h2{
 }
 .slogan{
     margin: -1em 6em 15em -2em;
+    color: #333333;
+
 }
 .image1 {
   max-width: 140%; /* La imagen no será más ancha que su contenedor */
@@ -86,28 +88,20 @@ form input {
   background: #CD9B81;
   padding: 15px 0;
   border-radius: 6px;
-  border: 2px solid #000000;
-  color: #000000;
+  border: 2px solid #5555;
+  color: #333333;
   font-size: 1.1rem;
   font-weight: 500;
   transition: 0.2s ease;
 }
 .login:hover {
   background: #F4EFFD;
-  border: 1.5px solid #0B0B0A;
+  border: 1.5px solid #5555;
 }
  .google-button {
   position: relative;
 }
-/* .google {
-  width: 11%;
-  margin-bottom: 0%;
-} */
-/* .google {
-  /* position: absolute;
-  left: 10px;  /*Ajusta la posición izquierda según tus preferencias */
-  /* top: 50%;
-  transform: translateY(-120%); */
+
   .google {
     position: flex;
     left: 50%; /* Centra el elemento horizontalmente */
@@ -138,9 +132,9 @@ hr {
   background: #fff;
   border-radius: 6px;
   border: 2px solid #CD9B81;
-  color: #0F0D0D;
-  font-size: 0.5xsrem;
-  font-weight: 400;
+  color: #333333;
+  font-size: 1.2em;
+  /* font-weight: 400; */
   transition: 0.2s ease;
 }
 .newac:hover {
@@ -223,10 +217,10 @@ hr {
   background-color: #fac8be;
   border: 2px solid #000000;
   color: #131212;
-  cursor: pointer;
+  cursor:auto;
   border-radius: 4px;
-  font-size: 16px;
-  transition: background-color 0.3s;
+  font-size: 20px;
+  transition: background-color0.1s;
 } 
 
 .buttonexit:hover {
