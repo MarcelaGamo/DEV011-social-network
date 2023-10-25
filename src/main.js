@@ -3,6 +3,8 @@ import { login}  from './elements/login.js';
 import { error}  from './elements/error.js';
 import { register }  from './elements/register.js';
 import { home } from './elements/home.js';
+// import { wallPage } from './elements/post.js';
+
 
 
 
@@ -12,6 +14,7 @@ const routes = [
     { path: '/wall', component: home },
     { path: '/error', component: error },
     { path: '/register', component: register },
+    // { path: '/wallPage', component: wallPage },
     //{ path: '/firebase', component: firebase },
   ];
 
