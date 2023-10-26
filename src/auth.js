@@ -7,7 +7,7 @@ import {
 } from 'firebase/auth';
 import { app } from './firebase';
 
-const auth = getAuth(app);
+export const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 export const NewUser = (email, password) => createUserWithEmailAndPassword(auth, email, password)
