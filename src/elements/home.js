@@ -26,9 +26,9 @@ export function home(navigateTo) {
   postTitle.setAttribute('class', 'post-title');
   postTitle.setAttribute('placeholder', '¿Qué nos quieres compartir hoy?');
 
-  const postContent = document.createElement('textarea');
+  /*const postContent = document.createElement('textarea');
   postContent.setAttribute('class', 'post-content');
-  postContent.setAttribute('placeholder', 'Cuentanos aquí');
+  postContent.setAttribute('placeholder', 'Cuentanos aquí');*/
 
   const postButton = document.createElement('button');
   postButton.setAttribute('class', 'post-button');
@@ -65,7 +65,7 @@ export function home(navigateTo) {
 
   const postContainerInner = document.createElement('div');
   postContainerInner.setAttribute('class', 'post-container-inner');
-  postContainerInner.append(postTitle, postContent, postButton);
+  postContainerInner.append(postTitle, postButton);
 
   postContainer.append(postContainerInner);
 
