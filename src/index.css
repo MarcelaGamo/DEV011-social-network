@@ -48,7 +48,6 @@ h2{
   margin: -50em 5em -11em -15em;
   /* width: 140%; */
 }
-
 .image3{
   max-width: 55%; /* La imagen no será más ancha que su contenedor */
   height: auto; /* La altura se ajustará proporcionalmente al ancho */
@@ -141,24 +140,40 @@ hr {
   font-weight: 400;
   transition: 0.2s ease;
 }
-
 .newac:hover {
   background: #CD9B81;
 }
  /*HOME*/
+ /*cambie la posición****/
  .image2 {
   width: 40%;
   position: fixed;
-  top: 0em;
-  left: -8em;
+  top: -2.5em;
+  left: -26em;
   margin: 5.8em 7em 1em 77em ;
 }
-
+/*boton para retroceder*/
+.returnbtn {
+  padding: 11px 11px;
+  size: 5%;
+  background: #fff;
+  border-radius: 6px;
+  border: 2px solid #0A0A0A;
+  color: #0F0D0D;
+  font-size: 1.2em;
+  transition: 0.2s ease;
+  position: fixed;
+  margin-top: -5%;
+  margin-left: -5%;
+}
+.returnbtn:hover {
+  background: #DFC3B5;
+}
+/*cambie el tamaño de la letra 30/10*****/
 .postitle{
-  color: #0f0e0e;
-  font-size: 4em;
-  margin: 0.8em 2em 1em 10em ;
-
+  color: #0F0E0E;
+  font-size: 3.5em;
+ margin-top: 3%;
 }
 .post-container {
   display: flex;
@@ -169,23 +184,20 @@ hr {
   padding: 50px;
   border-radius: 9px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 0.8em 2em 1em 45em ;
+  margin: 0.8em 2em 4em 25em ;
 }
-.post-title,
-.post-content {
-  width: 100%;
-  padding: 10px;
+/*estilo input post*****/
+.post-title {
+  width: 140%;
+  padding: 30px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
 }
-.post-content {
-  height: 100px;
-}
 .post-button {
   padding: 8px 16px;
-  background-color: #d1c7ea;
+  background-color: #D1C7EA;
   border: 1.5px solid #000000;
   color: #131212;
   border-radius: 4px;
@@ -193,11 +205,9 @@ hr {
   font-size: 16px;
   transition: background-color 0.3s;
 }
-
 .post-button:hover {
   background-color: #bb3c0ea0;
 }
-
 .post-edit {
   padding: 8px 16px;
   background-color: #CFBEFA;
@@ -209,34 +219,29 @@ hr {
   transition: background-color 0.3s;
   margin-left: 10px; /* Agregado un margen de 10px a la izquierda del botón */
 }
-
 .post-edit:hover {
   background-color: #bb3c0ea0;
 }
-
  .buttonexit {
   padding: 10px 40px;
   position: fixed;
-  bottom: 120px;
-  margin: 20% 1% 38% 86%;
-  background-color: #fac8be;
+  bottom: 75%;
+  left: 4%;
+  background-color: #FAC8BE;
   border: 2px solid #000000;
   color: #131212;
   cursor: pointer;
   border-radius: 4px;
   font-size: 16px;
   transition: background-color 0.3s;
-} 
-
+}
 .buttonexit:hover {
   background-color: #bb3c0ea0;
 }
-
 /* Estilos para el contenedor de la publicación */
 .post-container-inner {
   position: relative; /* Necesitamos posicionamiento relativo para posicionar elementos hijos de manera absoluta */
 }
-
 /* Estilos para el icono de eliminar */
 .delete-icon {
   position: absolute;
@@ -244,7 +249,6 @@ hr {
   bottom: 2px; /* Cambiado de "top" a "bottom" para moverlo a la parte inferior */
   right: 55%; /* Ajusta la posición horizontal según tu preferencia */
 }
-
 /* Estilos para el icono de like */
 .like-icon {
   position: absolute;
@@ -252,16 +256,12 @@ hr {
   bottom: -5px; /* Cambiado de "top" a "bottom" para moverlo a la parte inferior */
   right: 1%; /* Ajusta la posición horizontal según tu preferencia */
 }
-
 .postContainer
 {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-
-
 /*----------RESPONSIVE----------------*/
  @media (max-width: 900px) {
   .mujeres-page {
@@ -305,7 +305,6 @@ hr {
 .post-container {
   display: flex;
   align-items: center;
-   
  }
  .postContainer
 {
@@ -313,7 +312,6 @@ hr {
   align-items: center;
   justify-content: center;
 }
-
 }
 @media (max-width: 390px) {
   .mujeres-page h1 {
