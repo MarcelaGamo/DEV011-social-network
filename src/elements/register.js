@@ -67,8 +67,8 @@ export function register(navigateTo) {
 
   buttonLogin.addEventListener('click', (event) => {
     event.preventDefault();
-    NewUser(inputEmail.value, inputPassword.value).then(() => {
-    //  console.log(response);
+    NewUser(inputEmail.value, inputPassword.value).then((response) => {
+      console.log(response);
       navigateTo('/login');
     });
   });

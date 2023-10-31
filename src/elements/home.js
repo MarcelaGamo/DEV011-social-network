@@ -1,4 +1,4 @@
-import { addPost, querySnapshot } from '../lib/index.js';
+import { addPost, paintRealTime } from '../lib/index.js';
 
 export function home(navigateTo) {
   const section = document.createElement('section');
@@ -31,8 +31,9 @@ export function home(navigateTo) {
 
   const postSection = document.createElement('article');
   postTitle.setAttribute('class', 'post-section');
-  querySnapshot.then((docs) => {
-    docs.forEach((doc) => {
+  paintRealTime((querySnapshot) => {
+    postSection.textContent = '';
+    querySnapshot.forEach((doc) => {
       console.log(doc.id);
       console.log(doc.data());
       const post = document.createElement('input');
@@ -40,6 +41,14 @@ export function home(navigateTo) {
       postSection.append(post);
     });
   });
+
+  // querySnapshot.then((docs) => {
+  //   docs.forEach((doc) => {
+  //     console.log(doc.id);
+  //     console.log(doc.data());
+  //     const post = document.createElement('input');
+  //     post.value = doc.data().comment;
+  //     postSection.append(post);
   // const postContent = document.createElement('textarea');
   // postContent.setAttribute('class', 'post-content');
   // postContent.setAttribute('placeholder', 'Cuentanos aquí');
@@ -56,36 +65,39 @@ export function home(navigateTo) {
     // Aquí puedes implementar la lógica para publicar el post
   });
 
-  // // Icono de Eliminar
-  // const deleteIcon = document.createElement('img');
-  // deleteIcon.classList.add('delete-icon');
-  // deleteIcon.src = '/img/eliminar.png';
-  // deleteIcon.addEventListener('click', () => {
+  const publicationPost = document.createElement('div');
+  publicationPost.setAttribute('class', 'post-container');
 
-  // });
+  // Icono de Eliminar
+  const deleteIcon = document.createElement('img');
+  deleteIcon.classList.add('delete-icon');
+  deleteIcon.src = '/img/eliminar.png';
+  deleteIcon.addEventListener('click', () => {
 
-  // // Icono de Like
-  // const likeIcon = document.createElement('img');
-  // likeIcon.classList.add('like-icon');
-  // likeIcon.src = '/img/like.png';
-  // likeIcon.addEventListener('click', () => {
+  });
 
-  // });
+  // Icono de Like
+  const likeIcon = document.createElement('img');
+  likeIcon.classList.add('like-icon');
+  likeIcon.src = '/img/like.png';
+  likeIcon.addEventListener('click', () => {
 
-  // // Botón de Editar
-  // const editButton = document.createElement('button');
-  // editButton.setAttribute('class', 'post-edit');
-  // editButton.textContent = 'Editar';
-  // editButton.addEventListener('click', () => {
-  //   // Lógica para editar el post
-  // });
+  });
+
+  // Botón de Editar
+  const editButton = document.createElement('button');
+  editButton.setAttribute('class', 'post-edit');
+  editButton.textContent = 'Editar';
+  editButton.addEventListener('click', () => {
+    // Lógica para editar el post
+  });
 
   const postContainerInner = document.createElement('div');
   postContainerInner.setAttribute('class', 'post-container-inner');
-  postContainerInner.append(postTitle, postButton, postSection);
+  postContainerInner.append(postTitle, postButton, postSection, deleteIcon, likeIcon, editButton);
 
   postContainer.append(postContainerInner);
 
-  section.append(title, buttonExit, imgMujeres1, postContainer);
+  section.append(title, buttonExit, imgMujeres1, postContainer, publicationPost);
   return section;
 }

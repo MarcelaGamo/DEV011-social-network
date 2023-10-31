@@ -9,7 +9,7 @@ import {
   authGoogle, loginEmail,
 } from '../src/auth.js';
 import { register } from '../src/elements/register.js';
-import * as index from '../src/elements/register.js';
+import * as auth from '../src/auth.js';
 // import { register } from '../src/elements/register.js';
 
 describe('authGoogle', () => {
@@ -63,6 +63,7 @@ test('have a button', () => {
 // });
 describe('button login', () => {
   test('testing button NewUser', () => {
+    jest.spyOn(auth, 'NewUser').mockImplementation(() => Promise.resolve({ email: 'prueba@prueba.com', password: '123456' }));
     const DOM = document.createElement('div');
     DOM.append(register());
     const email = DOM.querySelector('#emailR');
@@ -71,18 +72,18 @@ describe('button login', () => {
     email.value = 'prueba@prueba.com';
     password.value = '123456';
     // const index = require('../src/elements/register.js');
-    let spyNewUser;
-    beforeAll(() => {
-      spyNewUser = jest.spyOn(index, 'NewUser').mockResolvedValue({
-        email: 'prueba@prueba.com',
-        password: '123456',
-      });
-    });
-    afterAll(() => {
-      spyNewUser.mockRestore();
-    });
+    // let spyNewUser
+    // beforeAll(() => {
+    //   jest.spyOn(auth, 'NewUser').mockResolvedValue({
+    //     email: 'prueba@prueba.com',
+    //     password: '123456',
+    //   });
+    // });
+    // afterAll(() => {
+    //   spyNewUser.mockRestore();
+    // });
     buttonLogin.click();
     // expect(spyNewUser).toHaveBeenCalled();
-    expect(spyNewUser).toHaveBeenCalledWith('prueba@prueba.com', '123456');
+    expect(auth.NewUser).toHaveBeenCalledWith('prueba@prueba.com', '123456');
   });
 });
