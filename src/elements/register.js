@@ -49,6 +49,15 @@ export function register(navigateTo) {
   const linkButton = document.createElement('div');
   linkButton.setAttribute('class', 'link');
 
+  /* botòn para devolverse**** */
+  const returnButton = document.createElement('button');
+  returnButton.setAttribute('type', 'button');
+  returnButton.setAttribute('class', 'returnbtn');
+  returnButton.textContent = 'VOLVER';
+  returnButton.addEventListener('click', () => {
+    navigateTo('/login');
+  });
+
   const buttonLogin = document.createElement('button');
   buttonLogin.setAttribute('type', 'submit');
   buttonLogin.setAttribute('class', 'login');
@@ -58,13 +67,13 @@ export function register(navigateTo) {
 
   buttonLogin.addEventListener('click', (event) => {
     event.preventDefault();
-    NewUser(inputEmail.value, inputPassword.value).then((response) => {
-      console.log(response);
+    NewUser(inputEmail.value, inputPassword.value).then(() => {
+    //  console.log(response);
       navigateTo('/login');
     });
   });
 
-  container3.append(titleP1, titleP2, slogan, imgMujeres);
+  container3.append(titleP1, titleP2, slogan, imgMujeres, returnButton);
   links.append(inputEmail, inputPassword, buttonLogin);
   container2.append(container3, links);
   container1.append(container2);

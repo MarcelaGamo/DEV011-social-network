@@ -1,3 +1,5 @@
+import { addPost, querySnapshot } from '../lib/index.js';
+
 export function home(navigateTo) {
   const section = document.createElement('section');
 
@@ -24,16 +26,31 @@ export function home(navigateTo) {
   const postTitle = document.createElement('input');
   postTitle.setAttribute('type', 'text');
   postTitle.setAttribute('class', 'post-title');
+  postTitle.setAttribute('id', 'postTitle');
   postTitle.setAttribute('placeholder', '¿Qué nos quieres compartir hoy?');
 
-  const postContent = document.createElement('textarea');
-  postContent.setAttribute('class', 'post-content');
-  postContent.setAttribute('placeholder', 'Cuentanos aquí');
+  const postSection = document.createElement('article');
+  postTitle.setAttribute('class', 'post-section');
+  querySnapshot.then((docs) => {
+    docs.forEach((doc) => {
+      console.log(doc.id);
+      console.log(doc.data());
+      const post = document.createElement('input');
+      post.value = doc.data().comment;
+      postSection.append(post);
+    });
+  });
+  // const postContent = document.createElement('textarea');
+  // postContent.setAttribute('class', 'post-content');
+  // postContent.setAttribute('placeholder', 'Cuentanos aquí');
 
   const postButton = document.createElement('button');
   postButton.setAttribute('class', 'post-button');
   postButton.textContent = 'Publicar';
   postButton.addEventListener('click', () => {
+    const comment = postContainer.querySelector('#postTitle').value;
+    addPost(comment);
+    console.log('funciona click', comment);
     // const title = postTitle.value;
     // const content = postContent.value;
     // Aquí puedes implementar la lógica para publicar el post
@@ -65,7 +82,7 @@ export function home(navigateTo) {
 
   const postContainerInner = document.createElement('div');
   postContainerInner.setAttribute('class', 'post-container-inner');
-  postContainerInner.append(postTitle, postContent, postButton);
+  postContainerInner.append(postTitle, postButton, postSection);
 
   postContainer.append(postContainerInner);
 
