@@ -22,82 +22,72 @@ export function home(navigateTo) {
 
   const postContainer = document.createElement('div');
   postContainer.setAttribute('class', 'post-container');
-
+  
   const postTitle = document.createElement('input');
   postTitle.setAttribute('type', 'text');
   postTitle.setAttribute('class', 'post-title');
   postTitle.setAttribute('id', 'postTitle');
   postTitle.setAttribute('placeholder', '¿Qué nos quieres compartir hoy?');
 
-  const postSection = document.createElement('article');
-  postTitle.setAttribute('class', 'post-section');
-  paintRealTime((querySnapshot) => {
-    postSection.textContent = '';
-    querySnapshot.forEach((doc) => {
-      console.log(doc.id);
-      console.log(doc.data());
-      const post = document.createElement('input');
-      post.value = doc.data().comment;
-      postSection.append(post);
-    });
-  });
-
-  // querySnapshot.then((docs) => {
-  //   docs.forEach((doc) => {
-  //     console.log(doc.id);
-  //     console.log(doc.data());
-  //     const post = document.createElement('input');
-  //     post.value = doc.data().comment;
-  //     postSection.append(post);
-  // const postContent = document.createElement('textarea');
-  // postContent.setAttribute('class', 'post-content');
-  // postContent.setAttribute('placeholder', 'Cuentanos aquí');
-
   const postButton = document.createElement('button');
   postButton.setAttribute('class', 'post-button');
   postButton.textContent = 'Publicar';
   postButton.addEventListener('click', () => {
-    const comment = postContainer.querySelector('#postTitle').value;
+    const comment = postTitle.value;
     addPost(comment);
-    console.log('funciona click', comment);
-    // const title = postTitle.value;
-    // const content = postContent.value;
-    // Aquí puedes implementar la lógica para publicar el post
+    postTitle.value= '';
   });
 
-  const publicationPost = document.createElement('div');
-  publicationPost.setAttribute('class', 'post-container');
+  const publicationPost = document.createElement('article');
+  publicationPost.setAttribute('class', 'post-section');
+  paintRealTime((querySnapshot) => {
+    publicationPost.textContent = '';
+    querySnapshot.forEach((doc) => {
+      const post = document.createElement('div');
+      post.classList.add('post-container-in');
+      
+      post.innerHTML = `
+      <div class="post-container">
+        <p class="post-title">${doc.data().comment}</p>
+        <img class="delete" src="/img/eliminar.png" alt="Eliminar">
+        <img class="like-icon" src="/img/like.png" alt="Like">
+        <button class="post-edit">Editar</button>
+      </div>
+      `;
+      publicationPost.append(post);
+    });
+  });
 
-  // Icono de Eliminar
+  //Icono de Eliminar
   const deleteIcon = document.createElement('img');
   deleteIcon.classList.add('delete-icon');
   deleteIcon.src = '/img/eliminar.png';
   deleteIcon.addEventListener('click', () => {
-
+    //Lógica para eliminar la publicación
   });
 
-  // Icono de Like
-  const likeIcon = document.createElement('img');
-  likeIcon.classList.add('like-icon');
-  likeIcon.src = '/img/like.png';
-  likeIcon.addEventListener('click', () => {
+  // // Icono de Like
+  // const likeIcon = document.createElement('img');
+  // likeIcon.classList.add('like-icon');
+  // likeIcon.src = '/img/like.png';
+  // likeIcon.addEventListener('click', () => {
+  // });
 
-  });
-
-  // Botón de Editar
-  const editButton = document.createElement('button');
-  editButton.setAttribute('class', 'post-edit');
-  editButton.textContent = 'Editar';
-  editButton.addEventListener('click', () => {
-    // Lógica para editar el post
-  });
+  // // Botón de Editar
+  // const editButton = document.createElement('button');
+  // editButton.setAttribute('class', 'post-edit');
+  // editButton.textContent = 'Editar';
+  // editButton.addEventListener('click', () => {
+  //   // Lógica para editar la publicación
+  // });
 
   const postContainerInner = document.createElement('div');
   postContainerInner.setAttribute('class', 'post-container-inner');
-  postContainerInner.append(postTitle, postButton, postSection, deleteIcon, likeIcon, editButton);
+  postContainerInner.append(postTitle, postButton);
 
   postContainer.append(postContainerInner);
 
   section.append(title, buttonExit, imgMujeres1, postContainer, publicationPost);
+
   return section;
 }
