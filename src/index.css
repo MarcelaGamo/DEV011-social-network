@@ -146,10 +146,10 @@ hr {
  /*HOME*/
  /*cambie la posición****/
  .image2 {
-  width: 40%;
+  width: 60%;
   position: fixed;
-  top: -2.5em;
-  left: -26em;
+  top: -20em;
+  left: -18em;
   margin: 5.8em 7em 1em 77em ;
 }
 /*boton para retroceder*/
@@ -209,18 +209,20 @@ hr {
   background-color: #bb3c0ea0;
 }
 .post-edit {
-  padding: 8px 16px;
-  background-color: #CFBEFA;
+  padding: 6px 14px;
+  background-color: #bb3c0ea0;
   border: 1.5px solid #000000;
   color: #131212;
   border-radius: 4px;
+  margin: -5.5em 1em 1em 1em;
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s;
-  margin-left: 10px; /* Agregado un margen de 10px a la izquierda del botón */
-}
+  /* margin-left: 8px; Agregado un margen de 10px a la izquierda del botón */
+  
+} 
 .post-edit:hover {
-  background-color: #bb3c0ea0;
+  background-color: #D1C7EA;
 }
  .buttonexit {
   padding: 10px 40px;
@@ -243,24 +245,41 @@ hr {
   position: relative; /* Necesitamos posicionamiento relativo para posicionar elementos hijos de manera absoluta */
 }
 /* Estilos para el icono de eliminar */
-.delete-icon {
-  position: absolute;
+.delete{
+  position: relative;
   width: 7%;
-  bottom: 2px; /* Cambiado de "top" a "bottom" para moverlo a la parte inferior */
-  right: 55%; /* Ajusta la posición horizontal según tu preferencia */
+  bottom: -3px; /* Cambiado de "top" a "bottom" para moverlo a la parte inferior */
+  right: -20%; /*Ajusta la posición horizontal según tu preferencia */
+  /* margin: 7em -5em 1em 1em; */
 }
 /* Estilos para el icono de like */
 .like-icon {
-  position: absolute;
-  width: 10%;
-  bottom: -5px; /* Cambiado de "top" a "bottom" para moverlo a la parte inferior */
-  right: 1%; /* Ajusta la posición horizontal según tu preferencia */
+  position: relative;
+  width: 7%;
+  bottom: -55px; /* Cambiado de "top" a "bottom" para moverlo a la parte inferior */
+  right: -14%; /* Ajusta la posición horizontal según tu preferencia */
 }
 .postContainer
 {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.post-title{
+  background-color: #f2f5f4;
+}
+
+
+.post-color-1 {
+  background-color: #FFD700; /* Amarillo */
+}
+
+.post-color-2 {
+  background-color: #FF6347; /* Rojo coral */
+}
+
+.post-color-3 {
+  background-color: #87CEFA; /* Azul claro */
 }
 /*----------RESPONSIVE----------------*/
  @media (max-width: 900px) {
