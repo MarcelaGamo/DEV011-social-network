@@ -17,8 +17,17 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 
+
 export const app = initializeApp(firebaseConfig);
 // export const auth = getAuth(app);
 // console.log(app);
 // const bdates =getFirestore (app)
 // const auth= getAuth (app);
+=======
+// export
+const app = initializeApp(firebaseConfig);
+console.log(app);
+const bdates =getFirestore (app)
+const auth= getAuth (firebaseApp);
+
+
