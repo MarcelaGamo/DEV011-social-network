@@ -30,17 +30,20 @@ body {
   color: #000000;
   font-size: 5rem;
   margin-bottom: 6px;
+  text-align: left;
 }
 .mujeres-page p {
   font-size: 1.5rem;
   white-space: nowrap;
+  text-align: center;
 }
 h2{
     margin: 0em 4em 1em 6em;
     font-size: 2.5rem;
+    text-align: center;
 }
 .slogan{
-    margin: -1em 6em 15em -2em;
+    margin: -1em 2em 15em -2em;
 }
 .image1 {
   max-width: 140%; /* La imagen no será más ancha que su contenedor */
@@ -72,12 +75,7 @@ form input {
   font-size: 1rem;
   padding: 0 14px;
 }
-/* .link {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: 15px;
-} */
+
 .login {
   /* border: none; */
   outline: none;
@@ -98,15 +96,7 @@ form input {
  .google-button {
   position: relative;
 }
-/* .google {
-  width: 11%;
-  margin-bottom: 0%;
-} */
-/* .google {
-  /* position: absolute;
-  left: 10px;  /*Ajusta la posición izquierda según tus preferencias */
-  /* top: 50%;
-  transform: translateY(-120%); */
+
   .google {
     position: flex;
     left: 50%; /* Centra el elemento horizontalmente */
@@ -143,15 +133,6 @@ hr {
 .newac:hover {
   background: #CD9B81;
 }
- /*HOME*/
- /*cambie la posición****/
- .image2 {
-  width: 60%;
-  position: fixed;
-  top: -20em;
-  left: -18em;
-  margin: 5.8em 7em 1em 77em ;
-}
 /*boton para retroceder*/
 .returnbtn {
   padding: 11px 11px;
@@ -164,123 +145,9 @@ hr {
   transition: 0.2s ease;
   position: fixed;
   margin-top: -5%;
-  margin-left: -5%;
+  /* margin-left: -5%; */
 }
-.returnbtn:hover {
-  background: #DFC3B5;
-}
-/*cambie el tamaño de la letra 30/10*****/
-.postitle{
-  color: #0F0E0E;
-  font-size: 3.5em;
- margin-top: 3%;
-}
-.post-container {
-  display: flex;
-  align-items: center;
-  max-width: 600px;
-  /* margin: 70px auto; */
-  background-color: #F7EBBB;
-  padding: 50px;
-  border-radius: 9px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 0.8em 2em 4em 25em ;
-}
-/*estilo input post*****/
-.post-title {
-  width: 140%;
-  padding: 30px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-}
-.post-button {
-  padding: 8px 16px;
-  background-color: #D1C7EA;
-  border: 1.5px solid #000000;
-  color: #131212;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-}
-.post-button:hover {
-  background-color: #bb3c0ea0;
-}
-.post-edit {
-  padding: 6px 14px;
-  background-color: #bb3c0ea0;
-  border: 1.5px solid #000000;
-  color: #131212;
-  border-radius: 4px;
-  margin: -5.5em 1em 1em 1em;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-  /* margin-left: 8px; Agregado un margen de 10px a la izquierda del botón */
-  
-} 
-.post-edit:hover {
-  background-color: #D1C7EA;
-}
- .buttonexit {
-  padding: 10px 40px;
-  position: fixed;
-  bottom: 75%;
-  left: 4%;
-  background-color: #FAC8BE;
-  border: 2px solid #000000;
-  color: #131212;
-  cursor: pointer;
-  border-radius: 4px;
-  font-size: 16px;
-  transition: background-color 0.3s;
-}
-.buttonexit:hover {
-  background-color: #bb3c0ea0;
-}
-/* Estilos para el contenedor de la publicación */
-.post-container-inner {
-  position: relative; /* Necesitamos posicionamiento relativo para posicionar elementos hijos de manera absoluta */
-}
-/* Estilos para el icono de eliminar */
-.delete{
-  position: relative;
-  width: 7%;
-  bottom: -3px; /* Cambiado de "top" a "bottom" para moverlo a la parte inferior */
-  right: -20%; /*Ajusta la posición horizontal según tu preferencia */
-  /* margin: 7em -5em 1em 1em; */
-}
-/* Estilos para el icono de like */
-.like-icon {
-  position: relative;
-  width: 7%;
-  bottom: -55px; /* Cambiado de "top" a "bottom" para moverlo a la parte inferior */
-  right: -14%; /* Ajusta la posición horizontal según tu preferencia */
-}
-.postContainer
-{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.post-title{
-  background-color: #f2f5f4;
-}
-
-
-.post-color-1 {
-  background-color: #FFD700; /* Amarillo */
-}
-
-.post-color-2 {
-  background-color: #FF6347; /* Rojo coral */
-}
-
-.post-color-3 {
-  background-color: #87CEFA; /* Azul claro */
-}
+ 
 /*----------RESPONSIVE----------------*/
  @media (max-width: 900px) {
   .mujeres-page {
@@ -295,15 +162,14 @@ hr {
     max-width: 120%; /* La imagen no será más ancha que su contenedor */
     height: auto; /* La altura se ajustará proporcionalmente al ancho */
     margin: -50em 5em -12em -15em;
-    /* width: 140%; */
-    .postContainer
-{
+  }
+  .postContainer{
   display: flex;
   align-items: center;
   justify-content: center;
 }
 }
-}
+
 @media screen and (max-width: 768px) {
   body {
     background-size: 100%; /* Ajusta el tamaño de la imagen para pantallas pequeñas */
@@ -311,26 +177,30 @@ hr {
   .image1 {
       max-width: 120%; /* La imagen no será más ancha que su contenedor */
       height: auto; /* La altura se ajustará proporcionalmente al ancho */
-      margin: -50em 5em -15em -15em;
+      margin: -50em 4em -5em -7em;
       /* width: 140%; */
   }
-  .postitle{
-    font-size: 2em;
-    margin: 0.8em 2em 1em 1em;
-}
-.image2{
-  display: flex;
-}
-.post-container {
-  display: flex;
-  align-items: center;
+  .image2{
+   display: flex;
  }
- .postContainer
-{
+ .post-container {
+   display: flex;
+   align-items: center;
+  }
+  .postContainer {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.buttonexit {
+  font-size: 16px;
+  padding: 12px 30px;
+}
+.returnbtn {
+  padding: 8px 8px; /* Reducir el padding */
+  font-size: 1em; /* Reducir el tamaño de fuente */
+}
+
 }
 @media (max-width: 390px) {
   .mujeres-page h1 {
@@ -359,4 +229,31 @@ align-items: center;
   align-items: center;
   justify-content: center;
 }
+.buttonexit {
+  font-size: 14px;
+  padding: 10px 20px;
 }
+}
+
+/*Aqui empieza el Responsive HEADER*/
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+@media (min-width: 370px) and (max-width: 767px) {
+  .slogan{
+  margin: -1em 2em 15em -2em;
+}
+}
+
+/*Aqui empieza el Responsive TARJETAS*/
+@media screen and (min-width: 768px) {
+}
+
+  @media (max-width: 480px) {
+    .returnbtn {
+      padding: 6px 6px; /* Reducir el padding aún más */
+      font-size: 0.8em; /* Reducir el tamaño de fuente aún más */
+    }
+}
+

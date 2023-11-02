@@ -5,7 +5,8 @@ export function home(navigateTo) {
 
   const title = document.createElement('h2');
   title.setAttribute('class', 'postitle');
-  title.textContent = 'Bienvenida a Mujer Space';
+  title.textContent = 'Bienvenida a MUJER SPACE';
+  
 
   const buttonExit = document.createElement('button');
   buttonExit.setAttribute('type', 'submit');
@@ -42,12 +43,12 @@ export function home(navigateTo) {
   publicationPost.setAttribute('class', 'post-section');
   paintRealTime((querySnapshot) => {
     publicationPost.textContent = '';
-    querySnapshot.forEach((doc) => {
+    querySnapshot.forEach((doc, home) => {
       const post = document.createElement('div');
       post.classList.add('post-container-in');
       
       post.innerHTML = `
-      <div class="post-container">
+      <div class="post-container1">
         <p class="post-title">${doc.data().comment}</p>
         <img class="delete" src="/img/eliminar.png" alt="Eliminar">
         <img class="like-icon" src="/img/like.png" alt="Like">
