@@ -15,7 +15,6 @@ export function home(navigateTo) {
   buttonExit.addEventListener('click', () => {
     navigateTo('/login');
   });
-
   // const imgMujeres1 = document.createElement('img');
   // imgMujeres1.setAttribute('alt', 'mujer1');
   // imgMujeres1.setAttribute('class', 'image2');
