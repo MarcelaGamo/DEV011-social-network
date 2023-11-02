@@ -51,6 +51,7 @@ export function login(navigateTo) {
   linkButton.setAttribute('class', 'link');
 
   const buttonLogin = document.createElement('button');
+  buttonLogin.setAttribute('id', 'buttonLogin');
   buttonLogin.setAttribute('type', 'submit');
   buttonLogin.setAttribute('class', 'login');
   buttonLogin.textContent = 'Entrar';

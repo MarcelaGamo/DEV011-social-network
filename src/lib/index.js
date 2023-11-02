@@ -1,6 +1,11 @@
-// aqui exportaras las funciones que necesites
+import {
+  db, collection, addDoc, getDocs,
+} from '../firestore.js';
 
-export const myFunction = () => {
-  // aqui tu codigo
-  console.log('Hola mundo!');
+export const addPost = (comment) => {
+  addDoc(collection(db, 'posts'), {
+    comment,
+  });
 };
+
+export const querySnapshot = getDocs(collection(db, 'posts'));

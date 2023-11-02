@@ -49,14 +49,14 @@ export function register(navigateTo) {
   const linkButton = document.createElement('div');
   linkButton.setAttribute('class', 'link');
 
-/*botòn para devolverse*****/
-  const returnButton = document.createElement ('button');
-    returnButton.setAttribute('type', 'button');
-    returnButton.setAttribute ('class', 'returnbtn');
-    returnButton.textContent = 'VOLVER';
-    returnButton.addEventListener('click', () => {
-      navigateTo('/login');
-    });
+  /* botòn para devolverse**** */
+  const returnButton = document.createElement('button');
+  returnButton.setAttribute('type', 'button');
+  returnButton.setAttribute('class', 'returnbtn');
+  returnButton.textContent = 'VOLVER';
+  returnButton.addEventListener('click', () => {
+    navigateTo('/login');
+  });
 
   const buttonLogin = document.createElement('button');
   buttonLogin.setAttribute('type', 'submit');
@@ -67,8 +67,8 @@ export function register(navigateTo) {
 
   buttonLogin.addEventListener('click', (event) => {
     event.preventDefault();
-    NewUser(inputEmail.value, inputPassword.value).then((response) => {
-      console.log(response);
+    NewUser(inputEmail.value, inputPassword.value).then(() => {
+    //  console.log(response);
       navigateTo('/login');
     });
     
