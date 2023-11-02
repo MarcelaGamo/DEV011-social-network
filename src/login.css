@@ -7,12 +7,11 @@
 }
 body {
   background-image: url('img/Mujer -Space_-4.png'); /* Reemplaza 'ruta/de/la/imagen.jpg' con la ruta de tu imagen*/
-  background-size: cover;
+  /* background-size: cover; */
   background-repeat: no-repeat;
   background-attachment: fixed;
-   background-size: 85%; /*tamaño punta cafe   */
+  background-size: 85%; /*tamaño punta cafe   */
  }
- 
 .flex {
   display: flex;
   align-items: center;
@@ -31,17 +30,20 @@ body {
   color: #000000;
   font-size: 5rem;
   margin-bottom: 6px;
+  text-align: left;
 }
 .mujeres-page p {
   font-size: 1.5rem;
   white-space: nowrap;
+  text-align: center;
 }
 h2{
     margin: 0em 4em 1em 6em;
     font-size: 2.5rem;
+    text-align: center;
 }
 .slogan{
-    margin: -1em 6em 15em -2em;
+    margin: -1em 2em 15em -2em;
 }
 .image1 {
   max-width: 140%; /* La imagen no será más ancha que su contenedor */
@@ -49,7 +51,11 @@ h2{
   margin: -50em 5em -11em -15em;
   /* width: 140%; */
 }
-
+.image3{
+  max-width: 55%; /* La imagen no será más ancha que su contenedor */
+  height: auto; /* La altura se ajustará proporcionalmente al ancho */
+  margin: -50em 8em 22em -12.5em;
+}
 form {
   display: flex;
   flex-direction: column;
@@ -70,16 +76,8 @@ form input {
   padding: 0 14px;
 }
 
-
-/* .link {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: 15px;
-} */
-
 .login {
-  border: none;
+  /* border: none; */
   outline: none;
   cursor: pointer;
   background: #CD9B81;
@@ -93,23 +91,12 @@ form input {
 }
 .login:hover {
   background: #F4EFFD;
-  border: 1.5px solid #0b0b0a;
-} 
+  border: 1.5px solid #0B0B0A;
+}
  .google-button {
   position: relative;
-} 
+}
 
-/* .google {
-  width: 11%;
-  margin-bottom: 0%;
-} */
-
-/* .google {
-  /* position: absolute; 
-  left: 10px;  /*Ajusta la posición izquierda según tus preferencias */
-  /* top: 50%;
-  transform: translateY(-120%); */
-  
   .google {
     position: flex;
     left: 50%; /* Centra el elemento horizontalmente */
@@ -125,41 +112,48 @@ hr {
   margin-bottom: 20px;
   margin-top: 20px;
 }
-
 .or{
   margin: 0.3em 4em 0.3em 7em;
     font-size: 1.5rem;
 }
-
 .newac {
   margin-top: 10px;
   text-align: center;
   margin-bottom: 10px;
-}
-.newac {
   padding: 11px 11px;
   size: 5%;
   background: #fff;
   border-radius: 6px;
   border: 2px solid #CD9B81;
   color: #0F0D0D;
-  font-size: 0.5xsrem;
+  font-size: 1.2em;
   font-weight: 400;
   transition: 0.2s ease;
 }
 .newac:hover {
   background: #CD9B81;
-}  
-
+}
+/*boton para retroceder*/
+.returnbtn {
+  padding: 11px 11px;
+  size: 5%;
+  background: #fff;
+  border-radius: 6px;
+  border: 2px solid #0A0A0A;
+  color: #0F0D0D;
+  font-size: 1.2em;
+  transition: 0.2s ease;
+  position: fixed;
+  margin-top: -5%;
+  /* margin-left: -5%; */
+}
+ 
 /*----------RESPONSIVE----------------*/
-
-
  @media (max-width: 900px) {
   .mujeres-page {
     flex-direction: column;
     text-align: center;
   }
-
   .mujeres-page .text {
     margin-bottom: 30px;
   }
@@ -168,7 +162,11 @@ hr {
     max-width: 120%; /* La imagen no será más ancha que su contenedor */
     height: auto; /* La altura se ajustará proporcionalmente al ancho */
     margin: -50em 5em -12em -15em;
-    /* width: 140%; */
+  }
+  .postContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 }
 
@@ -179,21 +177,83 @@ hr {
   .image1 {
       max-width: 120%; /* La imagen no será más ancha que su contenedor */
       height: auto; /* La altura se ajustará proporcionalmente al ancho */
-      margin: -50em 5em -15em -15em;
+      margin: -50em 4em -5em -7em;
       /* width: 140%; */
   }
+  .image2{
+   display: flex;
+ }
+ .post-container {
+   display: flex;
+   align-items: center;
+  }
+  .postContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttonexit {
+  font-size: 16px;
+  padding: 12px 30px;
+}
+.returnbtn {
+  padding: 8px 8px; /* Reducir el padding */
+  font-size: 1em; /* Reducir el tamaño de fuente */
 }
 
-@media (max-width: 460px) {
+}
+@media (max-width: 390px) {
   .mujeres-page h1 {
     font-size: 3.5rem;
   }
-
   .mujeres-page p {
     font-size: 1.3rem;
   }
-
   form {
     padding: 15px;
   }
-} 
+  .postitle{
+    font-size: 2em;
+    margin: 0.8em 2em 1em 1em;
+}
+.image2{
+  display: flex;
+}
+.post-container {
+ display: flex;
+align-items: center;
+}
+.postContainer
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttonexit {
+  font-size: 14px;
+  padding: 10px 20px;
+}
+}
+
+/*Aqui empieza el Responsive HEADER*/
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+@media (min-width: 370px) and (max-width: 767px) {
+  .slogan{
+  margin: -1em 2em 15em -2em;
+}
+}
+
+/*Aqui empieza el Responsive TARJETAS*/
+@media screen and (min-width: 768px) {
+}
+
+  @media (max-width: 480px) {
+    .returnbtn {
+      padding: 6px 6px; /* Reducir el padding aún más */
+      font-size: 0.8em; /* Reducir el tamaño de fuente aún más */
+    }
+}
+

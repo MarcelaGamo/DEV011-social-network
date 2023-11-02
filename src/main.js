@@ -1,25 +1,26 @@
-import { myFunction } from './lib/index.js';
-import { login}  from './elements/login.js';
-import { error}  from './elements/error.js';
-import  {register}  from './elements/register.js';
+// import { myFunction } from './lib/index.js';
+import { login } from './elements/login.js';
+import { error } from './elements/error.js';
+import { register } from './elements/register.js';
 import { home } from './elements/home.js';
-
+// import { wallPage } from './elements/post.js';
 
 const routes = [
-    { path: '/', component: login},
-    { path: '/login', component: login },
-    { path: '/wall', component: home },
-    { path: '/error', component: error },
-    { path: '/register', component: register },
-    //{ path: '/firebase', component: firebase },
-  ];
+  { path: '/', component: login },
+  { path: '/login', component: login },
+  { path: '/wall', component: home },
+  { path: '/error', component: error },
+  { path: '/register', component: register },
+  // { path: '/wallPage', component: wallPage },
+  // { path: '/firebase', component: firebase },
+];
 
-//   const defaultRoute = '/';
-// const root = document.getElementById('root');
+const defaultRoute = '/';
+const root = document.getElementById('root');
 
 function navigateTo(hash) {
   const route = routes.find((routeFound) => routeFound.path === hash);
-  
+
   if (route && route.component) {
     window.history.pushState(
       {},
@@ -31,7 +32,7 @@ function navigateTo(hash) {
       root.removeChild(root.firstChild);
     }
     root.appendChild(route.component(navigateTo));
-   } else {
+  } else {
     navigateTo('/error');
   }
 }
@@ -42,7 +43,7 @@ window.onpopstate = () => {
 
 navigateTo(window.location.pathname || defaultRoute);
 
-//myFunction();
+// myFunction();
 
 // function createUser(){
 
