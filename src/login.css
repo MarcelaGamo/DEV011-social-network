@@ -163,6 +163,12 @@ hr {
     height: auto; /* La altura se ajustará proporcionalmente al ancho */
     margin: -50em 5em -12em -15em;
   }
+  .image2 {
+    display: relative;
+    max-width: 120%; /* La imagen no será más ancha que su contenedor */
+    height: auto; /* La altura se ajustará proporcionalmente al ancho */
+    margin: -50em 5em -12em -15em;
+  }
   .postContainer{
   display: flex;
   align-items: center;
@@ -181,7 +187,10 @@ hr {
       /* width: 140%; */
   }
   .image2{
-   display: flex;
+    max-width: 120%; /* La imagen no será más ancha que su contenedor */
+      height: auto; /* La altura se ajustará proporcionalmente al ancho */
+      margin: -50em 4em -5em -7em;
+      /* width: 140%; */
  }
  .post-container {
    display: flex;
@@ -192,10 +201,7 @@ hr {
   align-items: center;
   justify-content: center;
 }
-.buttonexit {
-  font-size: 16px;
-  padding: 12px 30px;
-}
+
 .returnbtn {
   padding: 8px 8px; /* Reducir el padding */
   font-size: 1em; /* Reducir el tamaño de fuente */
@@ -219,24 +225,20 @@ hr {
 .image2{
   display: flex;
 }
-.post-container {
- display: flex;
-align-items: center;
-}
+
 .postContainer
 {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.buttonexit {
-  font-size: 14px;
-  padding: 10px 20px;
-}
+
 }
 
 /*Aqui empieza el Responsive HEADER*/
 @media (min-width: 768px) and (max-width: 1024px) {
+  
+  
 
 }
 
@@ -244,16 +246,21 @@ align-items: center;
   .slogan{
   margin: -1em 2em 15em -2em;
 }
+
 }
+
 
 /*Aqui empieza el Responsive TARJETAS*/
 @media screen and (min-width: 768px) {
+ 
 }
+
 
   @media (max-width: 480px) {
     .returnbtn {
       padding: 6px 6px; /* Reducir el padding aún más */
       font-size: 0.8em; /* Reducir el tamaño de fuente aún más */
     }
+     
 }
 

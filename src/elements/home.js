@@ -16,10 +16,15 @@ export function home(navigateTo) {
     navigateTo('/login');
   });
 
-  const imgMujeres1 = document.createElement('img');
-  imgMujeres1.setAttribute('alt', 'mujer1');
-  imgMujeres1.setAttribute('class', 'image2');
-  imgMujeres1.src = 'img/MUJERES1.png';
+  // const imgMujeres1 = document.createElement('img');
+  // imgMujeres1.setAttribute('alt', 'mujer1');
+  // imgMujeres1.setAttribute('class', 'image2');
+  // imgMujeres1.src = 'img/MUJERES1.png';
+
+  const imgMujeres = document.createElement('img');
+  imgMujeres.setAttribute('alt', 'mujer');
+  imgMujeres.setAttribute('class', 'image2');
+  imgMujeres.src = 'img/Mujer -Space_-2.png';
 
   const postContainer = document.createElement('div');
   postContainer.setAttribute('class', 'post-container');
@@ -88,7 +93,7 @@ export function home(navigateTo) {
 
   postContainer.append(postContainerInner);
 
-  section.append(title, buttonExit, imgMujeres1, postContainer, publicationPost);
+  section.append(title, buttonExit, imgMujeres,  postContainer, publicationPost);
 
   return section;
 }
