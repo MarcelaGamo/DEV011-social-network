@@ -14,21 +14,21 @@ export const NewUser = (email, password) => createUserWithEmailAndPassword(auth,
   .then((userCredential) => {
     // Signed in
     const user = userCredential.user;
-    alert('Registro exitoso');
+    // alert('Registro exitoso');
     return user; // ...
   })
   .catch((error) => {
     const errorCode = error.code;
-    const errorMessage = error.message;
+    // const errorMessage = error.message;
     console.log(error);
     if (errorCode === 'auth/invalid-email') {
-      alert('Correo invalido');
+      // alert('Correo invalido');
     } else if (errorCode === 'auth/email-already-in-use') {
-      alert('Correo registrado');
+      // alert('Correo registrado');
     } else if (errorCode === 'auth/weak-password') {
-      alert('La contraseña debe ser minímo de 6 caracteres');
+      // alert('La contraseña debe ser minímo de 6 caracteres');
     } else {
-      alert(`Ocurrió un error:  ${errorMessage}`);
+      // alert(`Ocurrió un error:  ${errorMessage}`);
     }
     // ..
   });
@@ -69,14 +69,14 @@ export const loginEmail = (email, password) => signInWithEmailAndPassword(auth, 
   })
   .catch((error) => {
     const errorCode = error.code;
-    const errorMessage = error.message;
+    // const errorMessage = error.message;
     if (errorCode === 'auth/invalid-email') {
-      alert('Correo invalido');
+      // alert('Correo invalido');
     } else if (errorCode === 'auth/invalid-login-credentials') {
-      alert('Correo o contraseña incorrecta');
+      // alert('Correo o contraseña incorrecta');
     } else if (errorCode === 'auth/missing-password') {
-      alert('Ingresar contraseña');
+      // alert('Ingresar contraseña');
     } else {
-      alert(`Ocurrió un error:  ${errorMessage}`);
+      // alert(`Ocurrió un error:  ${errorMessage}`);
     }
   });
