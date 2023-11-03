@@ -12,7 +12,7 @@
   .image2 {
     max-width: 45%; /* La imagen no será más ancha que su contenedor */
     height: auto; /* La altura se ajustará proporcionalmente al ancho */
-    margin: -50em 7em -9em 56em;
+    margin: -50em 7em -10em 52em;
   }
   .returnbtn:hover {
     background: #DFC3B5;
@@ -20,10 +20,10 @@
   /*cambie el tamaño de la letra 30/10*/
   .postitle{
     color: #333333;
-    font-size: 3.5em;
+    font-size: 3.2em;
    margin-top: 4%;
    margin-bottom: 6%;
-   margin: 1em 3em 1em 1em;
+   margin: 1em 3em 1em 7em;
   }
   .post-container {
     display: flex;

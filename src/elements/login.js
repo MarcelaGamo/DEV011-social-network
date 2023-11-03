@@ -34,6 +34,7 @@ export function login(navigateTo) {
 
   const links = document.createElement('form');
   links.setAttribute('action', '#');
+  links.setAttribute('class', 'contenido');
 
   const inputEmail = document.createElement('input');
   inputEmail.setAttribute('type', 'email');
