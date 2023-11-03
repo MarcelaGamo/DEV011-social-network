@@ -37,7 +37,7 @@ body {
   white-space: nowrap;
   text-align: center;
 }
-h2{
+.title2{
     margin: 0em 4em 1em 6em;
     font-size: 2.5rem;
     text-align: center;
@@ -149,6 +149,7 @@ hr {
 }
  
 /*----------RESPONSIVE----------------*/
+
  @media (max-width: 900px) {
   .mujeres-page {
     flex-direction: column;
@@ -159,108 +160,68 @@ hr {
   }
   .image1 {
     display: relative;
-    max-width: 120%; /* La imagen no será más ancha que su contenedor */
-    height: auto; /* La altura se ajustará proporcionalmente al ancho */
-    margin: -50em 5em -12em -15em;
+    max-width: 120%; 
+    height: auto; 
+     margin: -50em 5em -12em -15em;
   }
-  .image2 {
-    display: relative;
-    max-width: 120%; /* La imagen no será más ancha que su contenedor */
-    height: auto; /* La altura se ajustará proporcionalmente al ancho */
-    margin: -50em 5em -12em -15em;
-  }
-  .postContainer{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-}
+} 
 
-@media screen and (max-width: 768px) {
-  body {
-    background-size: 100%; /* Ajusta el tamaño de la imagen para pantallas pequeñas */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /*login*/
+  .title1{
+    margin: -8em 1em 20em 5em;
   }
+    .slogan{
+      margin: -1em 2em 18em 8em;
+      font-size: 3rem;
+  }
+  .title2{
+    margin: 0em 4em 1em 10em;
+    font-size: 2.5rem;
+    text-align: center;
+}
   .image1 {
-      max-width: 120%; /* La imagen no será más ancha que su contenedor */
-      height: auto; /* La altura se ajustará proporcionalmente al ancho */
-      margin: -50em 4em -5em -7em;
-      /* width: 140%; */
+    max-width: 80%; 
+    height: auto; 
+    margin: -48em 6em -1em 8em;
+    /* width: 140%; */
   }
-  .image2{
-    max-width: 120%; /* La imagen no será más ancha que su contenedor */
-      height: auto; /* La altura se ajustará proporcionalmente al ancho */
-      margin: -50em 4em -5em -7em;
-      /* width: 140%; */
- }
- .post-container {
-   display: flex;
-   align-items: center;
-  }
-  .postContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  .contenido{
+    margin: -6em 6em -12em -45em;
 }
-
+/* -------register----------*/
 .returnbtn {
-  padding: 8px 8px; /* Reducir el padding */
-  font-size: 1em; /* Reducir el tamaño de fuente */
+  padding: 6px 6px; /* Reducir el padding aún más */
+  font-size: 0.8em; /* Reducir el tamaño de fuente aún más */
+  left:53% ;
 }
+.allRegister{
+  margin: -6em 6em -12em -45em;
+  
+}
+/*---------home---------------*/
 
-}
-@media (max-width: 390px) {
-  .mujeres-page h1 {
-    font-size: 3.5rem;
-  }
-  .mujeres-page p {
-    font-size: 1.3rem;
-  }
-  form {
-    padding: 15px;
-  }
-  .postitle{
-    font-size: 2em;
-    margin: 0.8em 2em 1em 1em;
+.postitle{
+  text-align: center;
+  margin: 1em 1em 1em 7em;
 }
 .image2{
-  display: flex;
+  max-width: 44%;
+  height: auto;
+  margin: -46em 10em -1em 42em;
+}
 }
 
-.postContainer
-{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-}
-
-/*Aqui empieza el Responsive HEADER*/
-@media (min-width: 768px) and (max-width: 1024px) {
-  
-  
-
-}
-
-@media (min-width: 370px) and (max-width: 767px) {
-  .slogan{
-  margin: -1em 2em 15em -2em;
-}
-
-}
+@media (min-width: 768px) and (max-width: 1180px) { 
+  .container {
+    margin: 10em 0em -7em -23em;
+  }
+  .image1 {
+    max-width: 60%; 
+    height: auto; 
+    margin: -48em 6em -1em 18em;
+  }
+  }
 
 
-/*Aqui empieza el Responsive TARJETAS*/
-@media screen and (min-width: 768px) {
- 
-}
-
-
-  @media (max-width: 480px) {
-    .returnbtn {
-      padding: 6px 6px; /* Reducir el padding aún más */
-      font-size: 0.8em; /* Reducir el tamaño de fuente aún más */
-    }
-     
-}
 
