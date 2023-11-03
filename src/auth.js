@@ -30,7 +30,6 @@ export const NewUser = (email, password) => createUserWithEmailAndPassword(auth,
     } else {
       // alert(`Ocurrió un error:  ${errorMessage}`);
     }
-    // ..
   });
 
 export const authGoogle = () => signInWithPopup(auth, provider)
