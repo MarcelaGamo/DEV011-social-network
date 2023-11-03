@@ -148,6 +148,19 @@ hr {
   /* margin-left: -5%; */
 }
  
+.footer {
+  margin-top: 50px;
+  width: 100%;
+  padding: 15px 20%;
+  justify-content: center;
+  background: #fbf9f9;
+  color: #100a0a;
+  display:flex;
+  border-radius: 3px;
+  border-top-style: inset;
+  border-color: #ffd791;
+  border-width: 5px;
+}
 /*----------RESPONSIVE----------------*/
 
  @media (max-width: 900px) {
