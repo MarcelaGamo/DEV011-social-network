@@ -38,7 +38,6 @@ createUserWithEmailAndPassword(auth, email, password)
     } else {
       // alert(`Ocurrió un error:  ${errorMessage}`);
     }
-    // ..
   });
 
 export const authGoogle = () => signInWithPopup(auth, provider)

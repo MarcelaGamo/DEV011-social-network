@@ -1,22 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap');
 /*HOME*/
  /*cambie la posición*/
- .image2 {
-    width: 63%;
-    position: fixed;
-    top: -23em;
+ /* .image2 {
+    width: 63%; */
+    /* position: fixed; */
+    /* top: -23em;
     left: -17em;
     margin: 7em 7em 1em 77em ;
-  }
+  } */
   
+  .image2 {
+    max-width: 45%; /* La imagen no será más ancha que su contenedor */
+    height: auto; /* La altura se ajustará proporcionalmente al ancho */
+    margin: -50em 7em -9em 56em;
+  }
   .returnbtn:hover {
     background: #DFC3B5;
   }
   /*cambie el tamaño de la letra 30/10*/
   .postitle{
-    color: #0F0E0E;
+    color: #333333;
     font-size: 3.5em;
-   margin-top: 3%;
+   margin-top: 4%;
+   margin-bottom: 6%;
+   margin: 1em 3em 1em 1em;
   }
   .post-container {
     display: flex;
@@ -27,10 +34,11 @@
     border-radius: 9px;
     border: 2px solid #747373;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 0.8em 2em 4em 25em ;
+    margin: -3em 3em 5em 25em ;
   }
   /*estilo input post*/
   .post-title {
+    align-items: center;
     width: 140%;
     padding: 30px;
     margin-bottom: 10px;
@@ -67,16 +75,15 @@
   }
    .buttonexit {
     padding: 16px 40px;
-    position: fixed;
-    bottom: 62%;
-    left: 81%;
     background-color: #FAC8BE;
     border: 2px solid #000000;
     color: #131212;
     cursor: pointer;
     border-radius: 4px;
-    font-size: 20px;
+    font-size: 22px;
     transition: background-color 0.2s;
+    margin-left: 2%;
+    
   }
   .buttonexit:hover {
     background-color: #bb3c0ea0;
@@ -136,6 +143,4 @@
     background-color: #bec0a3; /* Quinto color */
   }
   
-  
-  /* Añade más reglas según sea necesario para más colores */
   
