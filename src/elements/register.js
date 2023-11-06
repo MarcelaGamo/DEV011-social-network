@@ -67,31 +67,12 @@ export function register(navigateTo) {
 
   buttonLogin.addEventListener('click', (event) => {
     event.preventDefault();
-    NewUser(inputEmail.value, inputPassword.value)
-      .then((userCredential) => {
-        // Signed in
-        console.log('ver: ', userCredential);
-        navigateTo('/login')
-        const user = userCredential.user;
-        // alert('Registro exitoso');
-        return user; // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        // const errorMessage = error.message;
-        console.log(error);
-        if (errorCode === 'auth/invalid-email') {
-          // alert('Correo invalido');
-        } else if (errorCode === 'auth/email-already-in-use') {
-          // alert('Correo registrado');
-        } else if (errorCode === 'auth/weak-password') {
-          // alert('La contraseña debe ser minímo de 6 caracteres');
-        } else {
-          // alert(`Ocurrió un error:  ${errorMessage}`);
-        }
-        // ..
-      });
+    NewUser(inputEmail.value, inputPassword.value).then((response) => {
+      console.log(response);
+      navigateTo('/login');
     });
+    
+  });
 
   container3.append(titleP1, titleP2, slogan, imgMujeres, returnButton);
   links.append(inputEmail, inputPassword, buttonLogin);
