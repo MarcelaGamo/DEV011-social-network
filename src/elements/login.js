@@ -22,10 +22,10 @@ export function login(navigateTo) {
   slogan.setAttribute('class', 'slogan');
   slogan.textContent = 'Conectadas las Mujeres de todo el mundo';
 
-  const cintarosa = document.createElement('img');
-  cintarosa.setAttribute('alt', 'mujer');
-  cintarosa.setAttribute('class', 'image3');
-  cintarosa.src = '/img/cinta2.png';
+  // const cintarosa = document.createElement('img');
+  // cintarosa.setAttribute('alt', 'mujer');
+  // cintarosa.setAttribute('class', 'image3');
+  // cintarosa.src = '/img/cinta2.png';
 
   const imgMujeres = document.createElement('img');
   imgMujeres.setAttribute('alt', 'mujer');
@@ -34,6 +34,7 @@ export function login(navigateTo) {
 
   const links = document.createElement('form');
   links.setAttribute('action', '#');
+  links.setAttribute('class', 'contenido');
 
   const inputEmail = document.createElement('input');
   inputEmail.setAttribute('type', 'email');
@@ -102,7 +103,7 @@ export function login(navigateTo) {
     navigateTo('/register');
   });
 
-  container3.append(titleP1, titleP2, slogan, imgMujeres, cintarosa);
+  container3.append(titleP1, titleP2, slogan, imgMujeres);
   container4.append(buttonNewAccount);
   links.append(
     inputEmail,

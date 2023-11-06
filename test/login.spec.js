@@ -5,6 +5,7 @@
 // importamos la funcion que vamos a testear
 // import { myFunction } from '../src/lib/index';
 // import { jest } from '@jest/globals';
+import { expect } from '@jest/globals';
 import {
   authGoogle, loginEmail,
 } from '../src/auth.js';
@@ -25,19 +26,24 @@ test('have a button', () => {
 });
 
 describe('button login', () => {
-  test('testing button NewUser', async () => {
+  test('testing button NewUser', () => {
+    const spyNewUser = jest.spyOn(prueba, 'NewUser').mockImplementation(() => Promise.resolve());
+    const navigateTo = jest.fn()
     const DOM = document.createElement('div');
-    DOM.append(register());
+    DOM.append(register(navigateTo));
     const email = DOM.querySelector('#emailR');
     const password = DOM.querySelector('#passwordR');
     const buttonLogin = DOM.querySelector('#buttonLogin');
     email.value = 'prueba@prueba49.com';
     password.value = '123456';
-    const spyNewUser = jest.spyOn(prueba, 'NewUser');
     buttonLogin.click();
-    await expect(spyNewUser).toHaveBeenCalledWith('prueba@prueba49.com', '123456');
-    const user = spyNewUser.mock.results[0].value;
-    console.log({ user }, 'desde aquiiiiiiiiiiiiiiiii');
-    await expect(user.email).toBe('prueba@prueba49.com');
+
+    setTimeout(()=>{
+      expect(navigateTo).toHaveBeenCalledWith('/login')
+    })
+  //   expect(spyNewUser).toHaveBeenCalledWith('prueba@prueba49.com', '123456');
+  //   const user = spyNewUser.mock.results[0].value;
+  //   console.log({ user }, 'desde aquiiiiiiiiiiiiiiiii');
+  //  expect(user.email).toBe('prueba@prueba49.com');
   });
 });

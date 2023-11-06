@@ -11,28 +11,7 @@ export const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 export const NewUser = (email, password) => createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in
-    const user = userCredential.user;
-    // alert('Registro exitoso');
-    return user; // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    // const errorMessage = error.message;
-    console.log(error);
-    if (errorCode === 'auth/invalid-email') {
-      // alert('Correo invalido');
-    } else if (errorCode === 'auth/email-already-in-use') {
-      // alert('Correo registrado');
-    } else if (errorCode === 'auth/weak-password') {
-      // alert('La contraseña debe ser minímo de 6 caracteres');
-    } else {
-      // alert(`Ocurrió un error:  ${errorMessage}`);
-    }
-    // ..
-  });
-
+  
 export const authGoogle = () => signInWithPopup(auth, provider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.

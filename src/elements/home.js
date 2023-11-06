@@ -5,8 +5,7 @@ export function home(navigateTo) {
 
   const title = document.createElement('h2');
   title.setAttribute('class', 'postitle');
-  title.textContent = 'Bienvenida a Mujer Space';
-
+  title.textContent = 'Bienvenida a MUJER SPACE';
   const buttonExit = document.createElement('button');
   buttonExit.setAttribute('type', 'submit');
   buttonExit.setAttribute('class', 'buttonexit');
@@ -14,11 +13,15 @@ export function home(navigateTo) {
   buttonExit.addEventListener('click', () => {
     navigateTo('/login');
   });
+  // const imgMujeres1 = document.createElement('img');
+  // imgMujeres1.setAttribute('alt', 'mujer1');
+  // imgMujeres1.setAttribute('class', 'image2');
+  // imgMujeres1.src = 'img/MUJERES1.png';
 
-  const imgMujeres1 = document.createElement('img');
-  imgMujeres1.setAttribute('alt', 'mujer1');
-  imgMujeres1.setAttribute('class', 'image2');
-  imgMujeres1.src = 'img/MUJERES1.png';
+  const imgMujeres = document.createElement('img');
+  imgMujeres.setAttribute('alt', 'mujer');
+  imgMujeres.setAttribute('class', 'image2');
+  imgMujeres.src = 'img/Mujer -Space_-2.png';
 
   const postContainer = document.createElement('div');
   postContainer.setAttribute('class', 'post-container');
@@ -42,12 +45,12 @@ export function home(navigateTo) {
   publicationPost.setAttribute('class', 'post-section');
   paintRealTime((querySnapshot) => {
     publicationPost.textContent = '';
-    querySnapshot.forEach((doc) => {
+    querySnapshot.forEach((doc, home) => {
       const post = document.createElement('div');
       post.classList.add('post-container-in');
       
       post.innerHTML = `
-      <div class="post-container">
+      <div class="post-container1">
         <p class="post-title">${doc.data().comment}</p>
         <img class="delete" src="/img/eliminar.png" alt="Eliminar">
         <img class="like-icon" src="/img/like.png" alt="Like">
@@ -87,7 +90,7 @@ export function home(navigateTo) {
 
   postContainer.append(postContainerInner);
 
-  section.append(title, buttonExit, imgMujeres1, postContainer, publicationPost);
+  section.append(title, buttonExit, imgMujeres,  postContainer, publicationPost);
 
   return section;
 }
