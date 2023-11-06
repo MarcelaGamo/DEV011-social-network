@@ -133,6 +133,7 @@ hr {
 .newac:hover {
   background: #CD9B81;
 }
+ /*REGISTER*/
 /*boton para retroceder*/
 .returnbtn {
   padding: 11px 11px;
@@ -163,7 +164,7 @@ hr {
 }
 /*----------RESPONSIVE----------------*/
 
- @media (max-width: 900px) {
+ /* @media (max-width: 900px) {
   .mujeres-page {
     flex-direction: column;
     text-align: center;
@@ -177,7 +178,7 @@ hr {
     height: auto; 
      margin: -50em 5em -12em -15em;
   }
-} 
+}  */
 
 @media (min-width: 768px) and (max-width: 1024px) {
   /*login*/

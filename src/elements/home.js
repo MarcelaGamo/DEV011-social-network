@@ -6,8 +6,6 @@ export function home(navigateTo) {
   const title = document.createElement('h2');
   title.setAttribute('class', 'postitle');
   title.textContent = 'Bienvenida a MUJER SPACE';
-  
-
   const buttonExit = document.createElement('button');
   buttonExit.setAttribute('type', 'submit');
   buttonExit.setAttribute('class', 'buttonexit');

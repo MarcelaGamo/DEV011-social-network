@@ -38,8 +38,9 @@
   }
   /*estilo input post*/
   .post-title {
+    display: flex;
     align-items: center;
-    width: 140%;
+    width: 190%;
     padding: 30px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
