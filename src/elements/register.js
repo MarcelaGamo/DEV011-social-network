@@ -67,12 +67,8 @@ export function register(navigateTo) {
 
   buttonLogin.addEventListener('click', (event) => {
     event.preventDefault();
-    NewUser(inputEmail.value, inputPassword.value).then((response) => {
-      console.log(response);
-      navigateTo('/login');
+    NewUser(inputEmail.value, inputPassword.value)
     });
-    
-  });
 
   container3.append(titleP1, titleP2, slogan, imgMujeres, returnButton);
   links.append(inputEmail, inputPassword, buttonLogin);

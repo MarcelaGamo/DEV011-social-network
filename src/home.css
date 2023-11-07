@@ -60,7 +60,7 @@
   .post-button:hover {
     background-color: #bb3c0ea0;
   }
-  .post-edit {
+  .edit {
     padding: 6px 14px;
     background-color: #bb3c0ea0;
     border: 1.5px solid #000000;
@@ -71,7 +71,22 @@
     font-size: 16px;
     transition: background-color 0.3s;
   } 
-  .post-edit:hover {
+  .edit:hover {
+    background-color: #D1C7EA;
+  }
+  .delete{
+    padding: 6px 16px;
+    background-color: #bb3c0ea0;
+    border: 1.5px solid #000000;
+    color: #131212;
+    border-radius: 4px;
+    margin: 1em -9em 1em 1em;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    
+  } 
+  .delete:hover {
     background-color: #D1C7EA;
   }
    .buttonexit {
@@ -94,13 +109,13 @@
     position: relative; 
   }
   /* Estilos para el icono de eliminar */
-  .delete{
+  /* .delete{
     position: relative;
-    width: 7%;
-    bottom: -3px; /* Cambiado de "top" a "bottom" para moverlo a la parte inferior */
-    right: -20%; /*Ajusta la posición horizontal según tu preferencia */
+    width: 7%; */
+    /*bottom: -3px; /* Cambiado de "top" a "bottom" para moverlo a la parte inferior */
+    /*right: -20%; /*Ajusta la posición horizontal según tu preferencia */
     /* margin: 7em -5em 1em 1em; */
-  }
+  /*}
   /* Estilos para el icono de like */
   .like-icon {
     position: relative;
