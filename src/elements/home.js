@@ -1,5 +1,6 @@
-import { addPost, paintRealTime } from '../lib/index.js';
-
+import { async } from 'regenerator-runtime';
+import { addPost, paintRealTime, deletePost, editpost } from '../lib/index.js';
+import {auth} from '../auth.js';
 export function home(navigateTo) {
   const section = document.createElement('section');
 
@@ -28,6 +29,7 @@ export function home(navigateTo) {
   
   const postTitle = document.createElement('input');
   postTitle.setAttribute('type', 'text');
+  postTitle.setAttribute('for', 'title');
   postTitle.setAttribute('class', 'post-title');
   postTitle.setAttribute('id', 'postTitle');
   postTitle.setAttribute('placeholder', '¿Qué nos quieres compartir hoy?');
@@ -37,7 +39,8 @@ export function home(navigateTo) {
   postButton.textContent = 'Publicar';
   postButton.addEventListener('click', () => {
     const comment = postTitle.value;
-    addPost(comment);
+    console.log("comentario", auth.currentUser.email)
+    addPost(comment, auth.currentUser.email);
     postTitle.value= '';
   });
 
@@ -52,22 +55,47 @@ export function home(navigateTo) {
       post.innerHTML = `
       <div class="post-container1">
         <p class="post-title">${doc.data().comment}</p>
-        <img class="delete" src="/img/eliminar.png" alt="Eliminar">
+        <button class="delete" data-id="${doc.id}" >Eliminar</button>
         <img class="like-icon" src="/img/like.png" alt="Like">
-        <button class="post-edit">Editar</button>
+        <button class="edit" data-id="${doc.id}" >Editar</button>
       </div>
       `;
       publicationPost.append(post);
+
+      const btnDelete = publicationPost.querySelectorAll ('.delete');
+      btnDelete.forEach (btn => {
+        btn.addEventListener ('click', ({target: {dataset}}) => {
+        if(doc.data().user===auth.currentUser.email) {
+          deletePost(dataset.id)
+        }
+        else {
+          console.log("este post no es tuyo")
+        }
+         })
+      })
+      const btnEdit = publicationPost.querySelectorAll ('.edit');
+      btnEdit.forEach (btn => {
+      btn.addEventListener ('click', async (e) => {
+        const doc = await editpost(e.target.dataset.id)
+        // console.log(doc.data())
+        const tarea = doc.data()
+        post ['post-title'].value = tarea.title
+      });
+      })
+
+    
+
+
     });
   });
-
+ 
   //Icono de Eliminar
-  const deleteIcon = document.createElement('img');
-  deleteIcon.classList.add('delete-icon');
-  deleteIcon.src = '/img/eliminar.png';
-  deleteIcon.addEventListener('click', () => {
-    //Lógica para eliminar la publicación
-  });
+  // const deleteIcon = document.createElement('img');
+  // deleteIcon.classList.add('delete-icon');
+  // deleteIcon.src = '/img/eliminar.png';
+  // deleteIcon.addEventListener('click', () => {
+  //   //Lógica para eliminar la publicación
+  // });
 
   // // Icono de Like
   // const likeIcon = document.createElement('img');
