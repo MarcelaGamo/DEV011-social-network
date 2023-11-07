@@ -51,7 +51,6 @@ export function home(navigateTo) {
     querySnapshot.forEach((doc, home) => {
       const post = document.createElement('div');
       post.classList.add('post-container-in');
-      
       post.innerHTML = `
       <div class="post-container1">
         <p class="post-title">${doc.data().comment}</p>
@@ -65,7 +64,7 @@ export function home(navigateTo) {
       const btnDelete = publicationPost.querySelectorAll ('.delete');
       btnDelete.forEach (btn => {
         btn.addEventListener ('click', ({target: {dataset}}) => {
-        if(doc.data().user===auth.currentUser.email) {
+        if(doc.data().user === auth.currentUser.email) {
           deletePost(dataset.id)
         }
         else {
@@ -75,20 +74,14 @@ export function home(navigateTo) {
       })
       const btnEdit = publicationPost.querySelectorAll ('.edit');
       btnEdit.forEach (btn => {
-      btn.addEventListener ('click', async (e) => {
+        btn.addEventListener ('click', async (e) => {
         const doc = await editpost(e.target.dataset.id)
         // console.log(doc.data())
-        const tarea = doc.data()
-        post ['post-title'].value = tarea.title
+          const tarea = doc.data()
+          post ['post-title'].value = tarea.title});
       });
-      })
-
-    
-
-
     });
-  });
- 
+  }); 
   //Icono de Eliminar
   // const deleteIcon = document.createElement('img');
   // deleteIcon.classList.add('delete-icon');

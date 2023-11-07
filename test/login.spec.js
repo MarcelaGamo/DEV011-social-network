@@ -28,7 +28,7 @@ test('have a button', () => {
 describe('button login', () => {
   test('testing button NewUser', () => {
     const spyNewUser = jest.spyOn(prueba, 'NewUser').mockImplementation(() => Promise.resolve());
-    const navigateTo = jest.fn()
+    const navigateTo = jest.fn();
     const DOM = document.createElement('div');
     DOM.append(register(navigateTo));
     const email = DOM.querySelector('#emailR');
@@ -38,9 +38,9 @@ describe('button login', () => {
     password.value = '123456';
     buttonLogin.click();
 
-    setTimeout(()=>{
-      expect(navigateTo).toHaveBeenCalledWith('/login')
-    })
+    setTimeout(() => {
+      expect(navigateTo).toHaveBeenCalledWith('/login');
+    });
   //   expect(spyNewUser).toHaveBeenCalledWith('prueba@prueba49.com', '123456');
   //   const user = spyNewUser.mock.results[0].value;
   //   console.log({ user }, 'desde aquiiiiiiiiiiiiiiiii');
