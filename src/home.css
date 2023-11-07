@@ -74,6 +74,8 @@
   .edit:hover {
     background-color: #D1C7EA;
   }
+
+  
   .delete{
     padding: 6px 16px;
     background-color: #bb3c0ea0;
@@ -84,7 +86,6 @@
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
-    
   } 
   .delete:hover {
     background-color: #D1C7EA;
@@ -117,11 +118,33 @@
     /* margin: 7em -5em 1em 1em; */
   /*}
   /* Estilos para el icono de like */
+  
+  .edit-icon {
+    position: relative;
+    width: 7%;
+    bottom: 50px;
+    right: -14%;
+  }
+
+  .delete-icon {
+    position: relative;
+    width: 7%;
+    bottom: -8px;
+    right: -7%;
+  }
+
   .like-icon {
     position: relative;
     width: 7%;
     bottom: -55px;
-    right: -14%;
+    right: 2%;
+  }
+
+  .count-like {
+    position: relative;
+    width: 10%;
+    bottom: -55px;
+    right: 4%;
   }
   .post-title{
     background-color: #f2f5f4;

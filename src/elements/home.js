@@ -1,6 +1,9 @@
-import { async } from 'regenerator-runtime';
-import { addPost, paintRealTime, deletePost, editpost } from '../lib/index.js';
-import {auth} from '../auth.js';
+// import { async } from 'regenerator-runtime';
+import {
+  addPost, paintRealTime, deletePost, editpost,
+} from '../lib/index.js';
+import { auth } from '../auth.js';
+
 export function home(navigateTo) {
   const section = document.createElement('section');
 
@@ -26,7 +29,6 @@ export function home(navigateTo) {
 
   const postContainer = document.createElement('div');
   postContainer.setAttribute('class', 'post-container');
-  
   const postTitle = document.createElement('input');
   postTitle.setAttribute('type', 'text');
   postTitle.setAttribute('for', 'title');
@@ -39,57 +41,61 @@ export function home(navigateTo) {
   postButton.textContent = 'Publicar';
   postButton.addEventListener('click', () => {
     const comment = postTitle.value;
-    console.log("comentario", auth.currentUser.email)
+    console.log('comentario', auth.currentUser.email);
     addPost(comment, auth.currentUser.email);
-    postTitle.value= '';
+    postTitle.value = '';
   });
 
   const publicationPost = document.createElement('article');
   publicationPost.setAttribute('class', 'post-section');
   paintRealTime((querySnapshot) => {
     publicationPost.textContent = '';
-    querySnapshot.forEach((doc, home) => {
+    querySnapshot.forEach((doc) => {
       const post = document.createElement('div');
       post.classList.add('post-container-in');
-      
+
       post.innerHTML = `
       <div class="post-container1">
         <p class="post-title">${doc.data().comment}</p>
-        <button class="delete" data-id="${doc.id}" >Eliminar</button>
-        <img class="like-icon" src="/img/like.png" alt="Like">
-        <button class="edit" data-id="${doc.id}" >Editar</button>
+        <img class="edit-icon" src="/img/lapiz.png" data-id="${doc.id}" alt="Edit">
+        <img class="delete-icon" src="/img/eliminar.png" data-id="${doc.id}" alt="Delete">
+        <span class="count-like">2</span>
+        <img class="like-icon" src="/img/like.png" data-id="${doc.id}" alt="Like">
       </div>
       `;
       publicationPost.append(post);
 
-      const btnDelete = publicationPost.querySelectorAll ('.delete');
-      btnDelete.forEach (btn => {
-        btn.addEventListener ('click', ({target: {dataset}}) => {
-        if(doc.data().user===auth.currentUser.email) {
-          deletePost(dataset.id)
-        }
-        else {
-          console.log("este post no es tuyo")
-        }
-         })
-      })
-      const btnEdit = publicationPost.querySelectorAll ('.edit');
-      btnEdit.forEach (btn => {
-      btn.addEventListener ('click', async (e) => {
-        const doc = await editpost(e.target.dataset.id)
-        // console.log(doc.data())
-        const tarea = doc.data()
-        post ['post-title'].value = tarea.title
+      const btnDelete = publicationPost.querySelectorAll('.delete-icon');
+      btnDelete.forEach((btn) => {
+        btn.addEventListener('click', ({ target: { dataset } }) => {
+          if (doc.data().user === auth.currentUser.email) {
+            deletePost(dataset.id);
+          } else {
+            console.log('este post no es tuyo');
+          }
+        });
       });
-      })
+    });
 
-    
+    const btnEdit = publicationPost.querySelectorAll('.edit-icon');
+    btnEdit.forEach((btn) => {
+      btn.addEventListener('click', async (e) => {
+        const doc = await editpost(e.target.dataset.id);
+        // console.log(doc.data())
+        const tarea = doc.data();
+        post['post-title'].value = tarea.title;
+      });
+    });
 
-
+    const btnLike = publicationPost.querySelectorAll('.like-icon');
+    btnLike.forEach((btn) => {
+      btn.addEventListener('click', ({ target: { dataset } }) => {
+        console.log(dataset);
+      });
     });
   });
- 
-  //Icono de Eliminar
+
+  // Icono de Eliminar
   // const deleteIcon = document.createElement('img');
   // deleteIcon.classList.add('delete-icon');
   // deleteIcon.src = '/img/eliminar.png';
@@ -118,7 +124,7 @@ export function home(navigateTo) {
 
   postContainer.append(postContainerInner);
 
-  section.append(title, buttonExit, imgMujeres,  postContainer, publicationPost);
+  section.append(title, buttonExit, imgMujeres, postContainer, publicationPost);
 
   return section;
 }
