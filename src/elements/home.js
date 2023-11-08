@@ -1,6 +1,6 @@
 // import { async } from 'regenerator-runtime';
 import {
-  addPost, paintRealTime, deletePost, editpost,
+  addPost, paintRealTime, deletePost, editpost, likePost,
 } from '../lib/index.js';
 import { auth } from '../auth.js';
 
@@ -41,7 +41,7 @@ export function home(navigateTo) {
   postButton.textContent = 'Publicar';
   postButton.addEventListener('click', () => {
     const comment = postTitle.value;
-    console.log('comentario', auth.currentUser.email);
+    // console.log('comentario', auth.currentUser.email);
     addPost(comment, auth.currentUser.email);
     postTitle.value = '';
   });
@@ -68,11 +68,14 @@ export function home(navigateTo) {
       const btnDelete = publicationPost.querySelectorAll('.delete-icon');
       btnDelete.forEach((btn) => {
         btn.addEventListener('click', ({ target: { dataset } }) => {
-          if (doc.data().user === auth.currentUser.email) {
+          if (doc.data().user === auth.currentUser.email)  {
+            if (window.confirm('¿Estas segura de eliminar esta publicación?')) {
             deletePost(dataset.id);
           } else {
             console.log('este post no es tuyo');
+            // alert ("No es posible eliminar este Post")
           }
+        }
         });
       });
     });
@@ -81,9 +84,10 @@ export function home(navigateTo) {
     btnEdit.forEach((btn) => {
       btn.addEventListener('click', async (e) => {
         const doc = await editpost(e.target.dataset.id);
-        // console.log(doc.data())
         const tarea = doc.data();
-        post['post-title'].value = tarea.title;
+        // console.log("hello", tarea)
+        // post['post-title'].value = tarea.title;
+      
       });
     });
 
@@ -91,10 +95,14 @@ export function home(navigateTo) {
     btnLike.forEach((btn) => {
       btn.addEventListener('click', ({ target: { dataset } }) => {
         console.log(dataset);
+        const postId = dataset.id;
+       likePost(postId, auth.currentUser.email);
+       
       });
     });
-  });
-
+   });
+   
+  
   // Icono de Eliminar
   // const deleteIcon = document.createElement('img');
   // deleteIcon.classList.add('delete-icon');
