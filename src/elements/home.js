@@ -70,6 +70,7 @@ export function home(navigateTo) {
         }
         else {
           console.log("este post no es tuyo")
+          alert('Este Post no se puede eliminar')
         }
          })
       })
