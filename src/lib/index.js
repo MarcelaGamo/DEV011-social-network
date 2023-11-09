@@ -22,3 +22,5 @@ export const paintRealTime = (callback) => onSnapshot(q, callback);
 export const deletePost = (id) => deleteDoc(doc(db, 'posts', id));
 
 export const editpost = (id) => getDoc(doc(db, 'posts', id));
+
+
