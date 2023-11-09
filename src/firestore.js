@@ -1,5 +1,15 @@
 import {
-  getFirestore, collection, addDoc, getDocs, onSnapshot, orderBy, query, doc, deleteDoc, getDoc, updateDoc,
+  getFirestore, 
+  collection, 
+  addDoc, 
+  getDocs, 
+  onSnapshot, 
+  orderBy, 
+  query, 
+  doc, 
+  deleteDoc, 
+  getDoc, 
+  updateDoc
 } from 'firebase/firestore';
 
 import { app } from './firebase';
@@ -7,5 +17,15 @@ import { app } from './firebase';
 export const db = getFirestore(app);
 
 export {
-  collection, addDoc, getDocs, onSnapshot, orderBy, query, doc, deleteDoc, getDoc, updateDoc,
+  collection, 
+  addDoc, 
+  getDocs, 
+  onSnapshot, 
+  orderBy, 
+  query, 
+  doc, 
+  deleteDoc, 
+  getDoc, 
+  updateDoc,
 };
+
