@@ -5,12 +5,12 @@ import {
   getDocs, 
   onSnapshot, 
   orderBy, 
-  query, 
-  doc, 
+  query,  
   deleteDoc, 
   getDoc, 
   updateDoc
 } from 'firebase/firestore';
+import { doc } from 'firebase/firestore';
 
 import { app } from './firebase';
 

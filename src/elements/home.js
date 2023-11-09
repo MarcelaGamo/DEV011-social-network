@@ -88,15 +88,15 @@ export function home(navigateTo) {
      });
         //Aqui debemos crear el codigo para editar la publicacióm
          const btnEdit = publicationPost.querySelectorAll('.edit-icon');
-        btnEdit.forEach((btn) => {
-         btn.addEventListener('click', async (e) => {
-        const doc = await editpost(e.target.dataset.id);
-        const tarea = doc.data();
-        // console.log("hello", tarea)
-        // post['post-title'].value = tarea.title;
-      
-      });
-    });
+         btnEdit.forEach((btn) => {
+           btn.addEventListener('click', async (e) => {
+             const doc = await editpost(e.target.dataset.id);
+             // console.log(doc.data())
+             const tarea = doc.data();
+             post['post-title'].value = tarea.title;
+           });
+         });
+         
      //este codigo es  para dar el like en el icono y q sea 1 por usuaria
       const btnLike = publicationPost.querySelectorAll('.like-icon');
       btnLike.forEach((btn) => {
@@ -107,10 +107,14 @@ export function home(navigateTo) {
        });
     });
      // Actualizar la cantidad de likes en tiempo real en interfazz y en data
-     const countLikes = publicationPost.querySelector(`#likes-count-${doc.id}`);
-     countLikes.textContent = doc.data().likes.length;    
-      });      
-  
+        // Agrega un listener para escuchar el evento 'likeAdded'
+          document.addEventListener('likeAdded', () => {
+          const countLikes = publicationPost.querySelector(`#likes-count-${doc.id}`);
+          countLikes.textContent = doc.data().likes.length;
+        });     
+      });
+    
+
 
   const postContainerInner = document.createElement('div');
   postContainerInner.setAttribute('class', 'post-container-inner');

@@ -5,13 +5,15 @@ import {
   getDocs, 
   onSnapshot, 
   query, 
-  orderBy, 
-  doc, 
+  orderBy,  
   deleteDoc, 
   getDoc, 
   updateDoc
 
 } from '../firestore.js';
+
+import { doc } from 'firebase/firestore';
+
 
 const postCollection = collection(db, 'posts');
 
@@ -33,36 +35,40 @@ export const paintRealTime = (callback) => onSnapshot(q, callback);
 export const deletePost = (id) => deleteDoc(doc(db, 'posts', id));
 
 export const editpost = (id) => getDoc(doc(db, 'posts', id));
-try {
-  await updateDoc(docRef, {
-    comment: newComment,
-  });
-  console.log('Publicación editada');
-} catch (error) {
-  console.error('Error al editar la publicación:', error);
-}
+// try {
+//   await updateDoc(docRef, {
+//     comment: newComment,
+//   });
+//   console.log('Publicación editada');
+// } catch (error) {
+//   console.error('Error al editar la publicación:', error);
+// }
 
 // export const likePost = (id) => updateDoc (doc(db, 'posts', id));
-
 export const likePost = async (documentId, userId) => {
   const doclike = doc(db, 'posts', documentId);
-
   try {
     const snapshot = await getDoc(doclike);
     if (snapshot.exists()) {
       const docData = snapshot.data();
       const likes = docData.likes || [];
-
       if (!likes.includes(userId)) {
-        // la usuaria no ha dado like, así que se puede sumar el like
         await updateDoc(doclike, {
-          likes: [...likes, userId], // esta función lo q hace es añadir el nuevo like al array de likes
+          likes: [...likes, userId],
         });
         console.log('Se dio Like =)');
+        const event = new Event('likeAdded');
+        document.dispatchEvent(event);
       } else {
-        console.log('ya habias dado like =).');
+        console.log('Ya habías dado like =).');
+        const dislike = likes.filter((like)=> like !== userId)
+        console.log(dislike)
+          
+        await updateDoc(doclike, {
+          likes: dislike
+        });
       }
-    } 
+    }
   } catch (error) {
     console.error('Error al dar like :(', error);
   }
