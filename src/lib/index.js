@@ -34,15 +34,17 @@ export const paintRealTime = (callback) => onSnapshot(q, callback);
 
 export const deletePost = (id) => deleteDoc(doc(db, 'posts', id));
 
-export const editpost = (id) => getDoc(doc(db, 'posts', id));
-// try {
-//   await updateDoc(docRef, {
-//     comment: newComment,
-//   });
-//   console.log('Publicación editada');
-// } catch (error) {
-//   console.error('Error al editar la publicación:', error);
-// }
+export const editpost = async (id) => {
+  const docRef = doc(db, 'posts', id);
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    return docSnap.data(); // Devolver los datos del documento
+  } else {
+    throw new Error('El documento no existe');
+  }
+};
+
 
 // export const likePost = (id) => updateDoc (doc(db, 'posts', id));
 export const likePost = async (documentId, userId) => {
@@ -60,9 +62,8 @@ export const likePost = async (documentId, userId) => {
         const event = new Event('likeAdded');
         document.dispatchEvent(event);
       } else {
-        console.log('Ya habías dado like =).');
         const dislike = likes.filter((like)=> like !== userId)
-        console.log(dislike)
+        console.log("Deslikiaste")
           
         await updateDoc(doclike, {
           likes: dislike

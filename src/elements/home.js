@@ -10,12 +10,14 @@ import {
 
 import { auth } from '../auth.js';
 
+let editingPostId = null;
+
 export function home(navigateTo) {
   const section = document.createElement('section');
 
   const title = document.createElement('h2');
   title.setAttribute('class', 'postitle');
-  title.textContent = 'Bienvenida a MUJER SPACE';
+  title.textContent = 'Bienvenida a MUJER SPACE'
   const buttonExit = document.createElement('button');
   buttonExit.setAttribute('type', 'submit');
   buttonExit.setAttribute('class', 'buttonexit');
@@ -42,15 +44,35 @@ export function home(navigateTo) {
   postTitle.setAttribute('id', 'postTitle');
   postTitle.setAttribute('placeholder', '¿Qué nos quieres compartir hoy?');
 
-  const postButton = document.createElement('button');
-  postButton.setAttribute('class', 'post-button');
-  postButton.textContent = 'Publicar';
-  postButton.addEventListener('click', () => {
-    const comment = postTitle.value;
-    // console.log('comentario', auth.currentUser.email);
-    addPost(comment, auth.currentUser.email);
-    postTitle.value = '';
-  });
+
+const postButton = document.createElement('button');
+postButton.setAttribute('class', 'post-button');
+postButton.textContent = 'Publicar';
+postButton.addEventListener('click', async () => {
+  const comment = postTitle.value;
+
+  if (editingPostId) {
+    try {
+      await editpost(editingPostId, comment);
+      console.log('Post editado correctamente');
+      paintRealTime((querySnapshot) => {
+        editingPostId = null;
+      });
+    } catch (error) {
+      console.error('Error al editar el post', error);
+    }
+  } else {
+    try {
+      await addPost(comment, auth.currentUser.email);
+      console.log('Post agregado correctamente');
+      paintRealTime((querySnapshot) => {
+      });
+    } catch (error) {
+      console.error('Error al agregar el post', error);
+    }
+  }
+  postTitle.value = '';
+});
 
   const publicationPost = document.createElement('article');
   publicationPost.setAttribute('class', 'post-section');
@@ -63,10 +85,11 @@ export function home(navigateTo) {
       post.innerHTML = `
       <div class="post-container1">
         <p class="post-title">${doc.data().comment}</p>
-        <img class="edit-icon" src="/img/lapiz.png" data-id="${doc.id}" alt="Edit">
+        <img class="edit-icon" src="/img/editar.png" data-id="${doc.id}" alt="Edit">
         <img class="delete-icon" src="/img/eliminar.png" data-id="${doc.id}" alt="Delete">
         <span class="count-like" id="likes-count-${doc.id}">${doc.data().likes.length}</span>
         <img class="like-icon" src="/img/like.png" data-id="${doc.id}" alt="Like">
+        <p class="post-author">Compartido por: ${doc.data().user}</p>
       </div>
       `;
       publicationPost.append(post);
@@ -76,27 +99,33 @@ export function home(navigateTo) {
       btnDelete.forEach((btn) => {
         btn.addEventListener('click', ({ target: { dataset } }) => {
           if (doc.data().user === auth.currentUser.email)  {
-            if (window.confirm('¿Estas segura de eliminar esta publicación?')) {
+            // if (window.confirm('¿Estas segura de eliminar esta publicación?')) {
             deletePost(dataset.id);
           } else {
             console.log('este post no es tuyo');
             // alert ("No es posible eliminar este Post")
-          }
+          // }
          }
          });
        });
      });
         //Aqui debemos crear el codigo para editar la publicacióm
-         const btnEdit = publicationPost.querySelectorAll('.edit-icon');
-         btnEdit.forEach((btn) => {
-           btn.addEventListener('click', async (e) => {
-             const doc = await editpost(e.target.dataset.id);
-             // console.log(doc.data())
-             const tarea = doc.data();
-             post['post-title'].value = tarea.title;
-           });
-         });
-         
+       const btnEdit = publicationPost.querySelectorAll('.edit-icon');
+       btnEdit.forEach((btn) => {
+       btn.addEventListener('click', async (e) => {
+       editingPostId = e.target.dataset.id;
+
+    try {
+      const tarea = await editpost(editingPostId);
+      console.log(editingPostId);
+      const postTitleElement = document.getElementById('postTitle');
+      postTitleElement.value = tarea.comment; 
+    } catch (error) {
+      console.error('Error al obtener el post', error);
+    }
+    });
+     });
+        
      //este codigo es  para dar el like en el icono y q sea 1 por usuaria
       const btnLike = publicationPost.querySelectorAll('.like-icon');
       btnLike.forEach((btn) => {
