@@ -1,4 +1,5 @@
 import { NewUser } from '../auth.js';
+import MujerSpace from '../img/MujerSpace.png';
 
 export function register(navigateTo) {
   const container1 = document.createElement('div');
@@ -25,7 +26,8 @@ export function register(navigateTo) {
   const imgMujeres = document.createElement('img');
   imgMujeres.setAttribute('alt', 'mujer');
   imgMujeres.setAttribute('class', 'image1');
-  imgMujeres.src = 'img/Mujer -Space_-2.png';
+  imgMujeres.setAttribute('src', MujerSpace);
+  container3.appendChild(imgMujeres);
 
   const links = document.createElement('form');
   links.setAttribute('action', '#');
@@ -67,14 +69,14 @@ export function register(navigateTo) {
 
   buttonLogin.addEventListener('click', (event) => {
     event.preventDefault();
-    NewUser(inputEmail.value, inputPassword.value)
-    });
+    NewUser(inputEmail.value, inputPassword.value);
+  });
 
-    const footer = document.createElement('footer');
+  const footer = document.createElement('footer');
   footer.setAttribute('class', 'footer');
   footer.textContent = 'Andrea - Carolina - Marcela © 2023';
 
-  container3.append(titleP1, titleP2, slogan, imgMujeres, returnButton);
+  container3.append(titleP1, titleP2, slogan, returnButton);
   links.append(inputEmail, inputPassword, buttonLogin);
   container2.append(container3, links);
   container1.append(container2);
