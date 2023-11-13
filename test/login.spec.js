@@ -9,7 +9,7 @@ import { expect } from '@jest/globals';
 import { authGoogle, loginEmail } from '../src/auth.js';
 import * as prueba from '../src/auth.js';
 import { register } from '../src/elements/register.js';
-import { deletePost } from './..src/index.js';
+import { likePost, deletePost } from '../src/lib/index.js';
 
 // import * as index from '../src/elements/register.js';
 // import { register } from '../src/elements/register.js';
