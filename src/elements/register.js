@@ -67,10 +67,10 @@ export function register(navigateTo) {
 
   buttonLogin.addEventListener('click', (event) => {
     event.preventDefault();
-    NewUser(inputEmail.value, inputPassword.value)
-    });
+    NewUser(inputEmail.value, inputPassword.value);
+  });
 
-    const footer = document.createElement('footer');
+  const footer = document.createElement('footer');
   footer.setAttribute('class', 'footer');
   footer.textContent = 'Andrea - Carolina - Marcela © 2023';
 

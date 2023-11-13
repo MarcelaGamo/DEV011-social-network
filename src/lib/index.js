@@ -11,6 +11,7 @@ import {
   getDoc,
   updateDoc,
 } from '../firestore.js';
+
 const postCollection = collection(db, 'posts');
 export const addPost = (comment, user) => {
   addDoc(postCollection, {
