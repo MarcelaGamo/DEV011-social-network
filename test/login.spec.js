@@ -36,7 +36,8 @@ describe('button login', () => {
     DOM.append(register(navigateTo));
     const email = DOM.querySelector('#emailR');
     const password = DOM.querySelector('#passwordR');
-    const buttonLogin = DOM.querySelector('#buttonLogin');
+    const buttonLogin = DOM.querySelecto
+    r('#buttonLogin');
     email.value = 'prueba@prueba49.com';
     password.value = '123456';
     buttonLogin.click();
