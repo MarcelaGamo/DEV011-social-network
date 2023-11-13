@@ -5,7 +5,6 @@ import {
   deletePost, 
   editpost, 
   likePost,
-  //removeLike
 } from '../lib/index.js';
 
 import { auth } from '../auth.js';
@@ -18,6 +17,8 @@ export function home(navigateTo) {
   const title = document.createElement('h2');
   title.setAttribute('class', 'postitle');
   title.textContent = 'Bienvenida a MUJER SPACE'
+  
+  
   const buttonExit = document.createElement('button');
   buttonExit.setAttribute('type', 'submit');
   buttonExit.setAttribute('class', 'buttonexit');
@@ -90,7 +91,7 @@ postButton.addEventListener('click', async () => {
         <span class="count-like" id="likes-count-${doc.id}">${doc.data().likes.length}</span>
         <img class="like-icon" src="/img/like.png" data-id="${doc.id}" alt="Like">
         <p class="post-author">Compartido por: ${doc.data().user}</p>
-      </div>
+        </div>
       `;
       publicationPost.append(post);
         
@@ -99,13 +100,14 @@ postButton.addEventListener('click', async () => {
       btnDelete.forEach((btn) => {
         btn.addEventListener('click', ({ target: { dataset } }) => {
           if (doc.data().user === auth.currentUser.email)  {
-            // if (window.confirm('¿Estas segura de eliminar esta publicación?')) {
+          if (window.confirm('¿Estas segura de eliminar esta publicación?')) {
             deletePost(dataset.id);
           } else {
             console.log('este post no es tuyo');
             // alert ("No es posible eliminar este Post")
           // }
          }
+        }
          });
        });
      });
