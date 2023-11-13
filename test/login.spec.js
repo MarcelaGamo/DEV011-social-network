@@ -9,7 +9,7 @@ import { expect } from '@jest/globals';
 import { authGoogle, loginEmail } from '../src/auth.js';
 import * as prueba from '../src/auth.js';
 import { register } from '../src/elements/register.js';
-import { likePost, deletePost } from '../src/lib/index.js';
+import { likePost, deletePost } from './..src/index.js';
 
 // import * as index from '../src/elements/register.js';
 // import { register } from '../src/elements/register.js';
@@ -68,6 +68,7 @@ describe('delete post', () => {
     expect(typeof deletePost).toBe('function');
   });
 });
+
 // prueba boton like
 test('like button', () => {
   const DOM = document.createElement('div');
@@ -75,7 +76,6 @@ test('like button', () => {
   const likeButton = DOM.querySelector('.like-icon');
   expect(likeButton).not.toBe(undefined);
 });
-
 // prueba función like
 describe('likePost', () => {
   test('the function adds likes', () => {
