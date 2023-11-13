@@ -70,6 +70,10 @@ export function register(navigateTo) {
     NewUser(inputEmail.value, inputPassword.value)
     });
 
+    const footer = document.createElement('footer');
+  footer.setAttribute('class', 'footer');
+  footer.textContent = 'Andrea - Carolina - Marcela © 2023';
+
   container3.append(titleP1, titleP2, slogan, imgMujeres, returnButton);
   links.append(inputEmail, inputPassword, buttonLogin);
   container2.append(container3, links);

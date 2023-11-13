@@ -163,6 +163,31 @@ hr {
   border-color: #ffd791;
   border-width: 5px;
 }
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 15px 10%;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    padding: 15px 5%;
+  }
+}
+
+@media (max-width: 414px) {
+  .footer {
+    padding: 15px 3%;
+  }
+}
+
+@media (max-width: 320px) {
+  .footer {
+    padding: 15px 2%;
+  }
+}
+
 /*----------RESPONSIVE----------------*/
 
  /* @media (max-width: 900px) {

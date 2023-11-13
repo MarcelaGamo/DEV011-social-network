@@ -47,6 +47,19 @@
     border-radius: 4px;
     font-size: 16px;
   }
+  .post-container1 {
+    position: relative;
+  }
+  
+  .post-author {
+    position: absolute;
+    bottom: 0;
+    left: 10px; /* O la cantidad de píxeles que desees desde el borde izquierdo */
+    font-size: 16px; /* O el tamaño de fuente que prefieras */
+    color: #555; /* O el color de texto que prefieras */
+    margin: 1em 1em 1em 3em;
+  }
+ 
   .post-button {
     padding: 8px 16px;
     background-color: #D1C7EA;
@@ -121,8 +134,8 @@
   
   .edit-icon {
     position: relative;
-    width: 7%;
-    bottom: 50px;
+    width: 6.3%;
+    bottom: 45px;
     right: -14%;
   }
 
@@ -181,5 +194,7 @@
   .post-section .post-container-in:nth-child(5n+5) .post-container1 {
     background-color: #bec0a3; /* Quinto color */
   }
+
+ 
   
   
