@@ -71,7 +71,7 @@ export function home(navigateTo) {
       post.innerHTML = `
       <div class="post-container1">
         <p class="post-title">${doc.data().comment}</p>
-        <img class="edit-icon" src="/img/lapiz.png" data-id="${doc.id}" alt="Edit">
+        <img class="edit-icon" src="/img/editar.png" data-id="${doc.id}" alt="Edit">
         <img class="delete-icon" src="/img/eliminar.png" data-id="${doc.id}" alt="Delete">
         <span class="count-like" id="likes-count-${doc.id}">${doc.data().likes.length}</span>
         <img class="like-icon" src="/img/like.png" data-id="${doc.id}" alt="Like">
