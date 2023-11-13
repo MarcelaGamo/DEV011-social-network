@@ -75,6 +75,7 @@ export function home(navigateTo) {
         <img class="delete-icon" src="/img/eliminar.png" data-id="${doc.id}" alt="Delete">
         <span class="count-like" id="likes-count-${doc.id}">${doc.data().likes.length}</span>
         <img class="like-icon" src="/img/like.png" data-id="${doc.id}" alt="Like">
+        <p class="post-author">Compartido por: ${doc.data().user}</p>
       </div>
       `;
       publicationPost.append(post);
