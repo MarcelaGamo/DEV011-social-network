@@ -31,6 +31,7 @@ describe('button login', () => {
   test('testing button NewUser', () => {
     const spyNewUser = jest.spyOn(prueba, 'NewUser').mockImplementation(() => Promise.resolve());
     const navigateTo = jest.fn();
+    const navigateTo = jest.fn();
     const DOM = document.createElement('div');
     DOM.append(register(navigateTo));
     const email = DOM.querySelector('#emailR');
