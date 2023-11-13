@@ -9,11 +9,10 @@ import { expect } from '@jest/globals';
 import { authGoogle, loginEmail } from '../src/auth.js';
 import * as prueba from '../src/auth.js';
 import { register } from '../src/elements/register.js';
-import { deletePost} from '..src/index.js';
+import { deletePost } from './..src/index.js';
 
 // import * as index from '../src/elements/register.js';
 // import { register } from '../src/elements/register.js';
-
 
 describe('authGoogle', () => {
   test('is a function', () => {
@@ -41,9 +40,9 @@ describe('button login', () => {
     password.value = '123456';
     buttonLogin.click();
 
-    setTimeout(()=>{
-      expect(navigateTo).toHaveBeenCalledWith('/login')
-    })
+    setTimeout(() => {
+      expect(navigateTo).toHaveBeenCalledWith('/login');
+    });
   });
 });
 
@@ -55,7 +54,6 @@ test('Icono de eliminar', () => {
   const haveAIcon = DOM.querySelector('.delete-icon');
   expect(haveAIcon).not.toBe(undefined);
 });
-
 
 // describe('Eliminar un post', () => {
 //   it('debería ser una función', () => {
