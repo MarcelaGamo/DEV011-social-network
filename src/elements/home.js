@@ -9,7 +9,7 @@ import {
 } from '../lib/index.js';
 import { auth } from '../auth.js';
 import mujeresLogo from '../img/Mujer -Space_-2.png';
-import edit from '../img/lapiz.png';
+import edit from '../img/editar.png';
 import erase from '../img/eliminar.png';
 import likes from '../img/like.png';
 
