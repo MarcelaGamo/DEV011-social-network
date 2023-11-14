@@ -14,7 +14,6 @@ import { likePost, deletePost } from './..src/index.js';
 // import * as index from '../src/elements/register.js';
 // import { register } from '../src/elements/register.js';
 
-
 describe('authGoogle', () => {
   test('is a function', () => {
     expect(typeof authGoogle).toBe('function');
@@ -31,19 +30,21 @@ test('have a button', () => {
 describe('button login', () => {
   test('testing button NewUser', () => {
     const spyNewUser = jest.spyOn(prueba, 'NewUser').mockImplementation(() => Promise.resolve());
-    const navigateTo = jest.fn()
+    const navigateTo = jest.fn();
+    const navigateTo = jest.fn();
     const DOM = document.createElement('div');
     DOM.append(register(navigateTo));
     const email = DOM.querySelector('#emailR');
     const password = DOM.querySelector('#passwordR');
-    const buttonLogin = DOM.querySelector('#buttonLogin');
+    const buttonLogin = DOM.querySelecto
+    r('#buttonLogin');
     email.value = 'prueba@prueba49.com';
     password.value = '123456';
     buttonLogin.click();
 
-    setTimeout(()=>{
-      expect(navigateTo).toHaveBeenCalledWith('/login')
-    })
+    setTimeout(() => {
+      expect(navigateTo).toHaveBeenCalledWith('/login');
+    });
   });
 });
 
@@ -55,7 +56,6 @@ test('Icono de eliminar', () => {
   const haveAIcon = DOM.querySelector('.delete-icon');
   expect(haveAIcon).not.toBe(undefined);
 });
-
 
 // describe('Eliminar un post', () => {
 //   it('debería ser una función', () => {

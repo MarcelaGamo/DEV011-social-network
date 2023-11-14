@@ -8,6 +8,10 @@ import {
   likePost,
 } from '../lib/index.js';
 import { auth } from '../auth.js';
+import mujeresLogo from '../img/Mujer -Space_-2.png';
+import edit from '../img/editar.png';
+import erase from '../img/eliminar.png';
+import likes from '../img/like.png';
 
 let editingPostId = null;
 export function home(navigateTo) {
@@ -29,7 +33,7 @@ export function home(navigateTo) {
   const imgMujeres = document.createElement('img');
   imgMujeres.setAttribute('alt', 'mujer');
   imgMujeres.setAttribute('class', 'image2');
-  imgMujeres.src = 'img/Mujer -Space_-2.png';
+  imgMujeres.src = mujeresLogo;
   const postContainer = document.createElement('div');
   postContainer.setAttribute('class', 'post-container');
   const postTitle = document.createElement('input');
@@ -70,13 +74,13 @@ export function home(navigateTo) {
       post.classList.add('post-container-in');
       post.innerHTML = `
       <div class="post-container1">
-        <p class="post-title">${doc.data().comment}</p>
-        <img class="edit-icon" src="/img/editar.png" data-id="${doc.id}" alt="Edit">
-        <img class="delete-icon" src="/img/eliminar.png" data-id="${doc.id}" alt="Delete">
-        <span class="count-like" id="likes-count-${doc.id}">${doc.data().likes.length}</span>
-        <img class="like-icon" src="/img/like.png" data-id="${doc.id}" alt="Like">
-        <p class="post-author">Compartido por: ${doc.data().user}</p>
-      </div>
+    <p class="post-title">${doc.data().comment}</p>
+    <img class="edit-icon" src="${edit}" data-id="${doc.id}" alt="Edit">
+    <img class="delete-icon" src="${erase}" data-id="${doc.id}" alt="Delete">
+    <span class="count-like" id="likes-count-${doc.id}">${doc.data().likes.length}</span>
+    <img class="like-icon" src="${likes}" data-id="${doc.id}" alt="Like">
+    <p class="post-author">Compartido por: ${doc.data().user}</p>
+  </div>
       `;
       publicationPost.append(post);
       // Este codigo es para que se elimine el post
