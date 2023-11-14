@@ -75,7 +75,7 @@ export function register(navigateTo) {
   footer.setAttribute('class', 'footer');
   footer.textContent = 'Andrea - Carolina - Marcela © 2023';
 
-  container3.append(titleP1, titleP2, slogan, imgMujeres, returnButton);
+  container3.append(titleP1, titleP2, slogan, returnButton);
   links.append(inputEmail, inputPassword, buttonLogin);
   container2.append(container3, links);
   container1.append(container2);
