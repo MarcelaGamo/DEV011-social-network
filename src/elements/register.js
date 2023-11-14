@@ -1,5 +1,5 @@
 import { NewUser } from '../auth.js';
-import mujeress from '../img/Mujer -Space_-2.png';
+import mujeress from '../img/MujerSpace.png';
 
 export function register(navigateTo) {
   const container1 = document.createElement('div');
