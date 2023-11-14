@@ -1,17 +1,4 @@
-// import { async } from 'regenerator-runtime';
-import {
-  addPost,
-  paintRealTime,
-  deletePost,
-  getDocument,
-  editPost,
-  likePost,
-} from '../lib/index.js';
-import { auth } from '../auth.js';
-import mujeresLogo from '../img/MujerSpace.png';
-import edit from '../img/editar.png';
-import erase from '../img/eliminar.png';
-import likes from '../img/like.png';
+import { addPost, paintRealTime } from '../lib/index.js';
 
 let editingPostId = null;
 export function home(navigateTo) {
@@ -135,3 +122,5 @@ export function home(navigateTo) {
   section.append(title, buttonExit, imgMujeres, postContainer, publicationPost);
   return section;
 }
+
+

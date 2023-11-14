@@ -12,6 +12,13 @@ export const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 export const NewUser = (email, password) => createUserWithEmailAndPassword(auth, email, password)
+
+// //Creación cuenta y contraseña-----
+
+const auth = getAuth();
+
+export const newUser =(email, password)
+createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
   // Signed in
     console.log('ver: ', userCredential);
@@ -33,7 +40,7 @@ export const NewUser = (email, password) => createUserWithEmailAndPassword(auth,
     } else {
     // alert(`Ocurrió un error:  ${errorMessage}`);
     }
-  // ..
+
   });
 
 export const authGoogle = () => signInWithPopup(auth, provider)
@@ -82,4 +89,30 @@ export const loginEmail = (email, password) => signInWithEmailAndPassword(auth, 
     } else {
       // alert(`Ocurrió un error:  ${errorMessage}`);
     }
+
   });
+
+
+  // Registro para ingresar------
+
+  export const loginFunction = (email,password) => new Promise((resolve, reject) => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        alert('resgitrada con exito')
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error("Error al ingresar el usuario:", errorCode, errorMessage);
+        
+        const errorSpan = document.querySelector(".span-login");
+        if(errorCode === 'auth/invalid-email') {
+          errorSpan.innerHTML = 'Correo invalido';
+        } else if(errorCode === 'auth/invalid-login-credentials') {
+          errorSpan.innerHTML = 'Datos incorrectos, revisa tu correo y contraseña';
+        } else if(errorCode === 'auth/user-disabled') {
+          errorSpan.innerHTML ='Tu cuenta se encuentra deshabilitada';
+        }
+      });
+    })

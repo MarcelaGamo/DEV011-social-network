@@ -15,10 +15,16 @@ const firebaseConfig = {
   appId: '1:1024099140962:web:5adf2e88d97bd46263183b',
   measurementId: 'G-S4WC053M5G',
 };
-// Initialize Firebase
 
 export const app = initializeApp(firebaseConfig);
 // export const auth = getAuth(app);
 // console.log(app);
 // const bdates =getFirestore (app)
 // const auth= getAuth (app);
+// export
+const app = initializeApp(firebaseConfig);
+console.log(app);
+const bdates =getFirestore (app)
+const auth= getAuth (firebaseApp);
+
+
