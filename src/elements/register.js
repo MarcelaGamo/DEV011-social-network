@@ -1,4 +1,5 @@
 import { NewUser } from '../auth.js';
+import mujeress from '../img/Mujer -Space_-2.png';
 
 export function register(navigateTo) {
   const container1 = document.createElement('div');
@@ -25,7 +26,7 @@ export function register(navigateTo) {
   const imgMujeres = document.createElement('img');
   imgMujeres.setAttribute('alt', 'mujer');
   imgMujeres.setAttribute('class', 'image1');
-  imgMujeres.src = 'img/Mujer -Space_-2.png';
+  imgMujeres.src = mujeress;
 
   const links = document.createElement('form');
   links.setAttribute('action', '#');

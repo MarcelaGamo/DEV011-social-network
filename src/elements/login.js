@@ -1,4 +1,6 @@
 import { authGoogle, loginEmail } from '../auth.js';
+import mujeresLogo from '../img/Mujer -Space_-2.png';
+import gooGle from '../img/logo_google_icon_143197.png';
 
 export function login(navigateTo) {
   const container1 = document.createElement('div');
@@ -30,7 +32,7 @@ export function login(navigateTo) {
   const imgMujeres = document.createElement('img');
   imgMujeres.setAttribute('alt', 'mujer');
   imgMujeres.setAttribute('class', 'image1');
-  imgMujeres.src = 'img/Mujer -Space_-2.png';
+  imgMujeres.src = mujeresLogo;
 
   const links = document.createElement('form');
   links.setAttribute('action', '#');
@@ -90,7 +92,7 @@ export function login(navigateTo) {
   const imgGoogle = document.createElement('img');
   imgGoogle.setAttribute('class', 'google');
   imgGoogle.setAttribute('alt', 'logo-google');
-  imgGoogle.src = 'img/logo_google_icon_143197.png';
+  imgGoogle.src = gooGle;
 
   const container4 = document.createElement('div');
   container4.setAttribute('class', 'button');
