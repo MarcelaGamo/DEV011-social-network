@@ -9,12 +9,18 @@ import {
 } from '../lib/index.js';
 import { auth } from '../auth.js';
 
+// import editar from '../img/editarpng';
+// import eliminar from '../img/eliminar.png';
+// import like from '../img/like.png';
+import MujerSpace from '../img/MujerSpace.png';
+
 let editingPostId = null;
 export function home(navigateTo) {
   const section = document.createElement('section');
   const title = document.createElement('h2');
   title.setAttribute('class', 'postitle');
   title.textContent = 'Bienvenida a MUJER SPACE';
+
   const buttonExit = document.createElement('button');
   buttonExit.setAttribute('type', 'submit');
   buttonExit.setAttribute('class', 'buttonexit');
@@ -26,10 +32,13 @@ export function home(navigateTo) {
   // imgMujeres1.setAttribute('alt', 'mujer1');
   // imgMujeres1.setAttribute('class', 'image2');
   // imgMujeres1.src = 'img/MUJERES1.png';
+
   const imgMujeres = document.createElement('img');
   imgMujeres.setAttribute('alt', 'mujer');
   imgMujeres.setAttribute('class', 'image2');
-  imgMujeres.src = 'img/Mujer -Space_-2.png';
+  imgMujeres.setAttribute('src', MujerSpace);
+  section.appendChild(imgMujeres);
+
   const postContainer = document.createElement('div');
   postContainer.setAttribute('class', 'post-container');
   const postTitle = document.createElement('input');
@@ -88,7 +97,7 @@ export function home(navigateTo) {
               deletePost(dataset.id);
             } else {
               console.log('este post no es tuyo');
-            // alert ("No es posible eliminar este Post")
+            alert ("No es posible eliminar este Post")
             }
           }
         });
@@ -128,6 +137,6 @@ export function home(navigateTo) {
   postContainerInner.setAttribute('class', 'post-container-inner');
   postContainerInner.append(postTitle, postButton);
   postContainer.append(postContainerInner);
-  section.append(title, buttonExit, imgMujeres, postContainer, publicationPost);
+  section.append(title, buttonExit, postContainer, publicationPost);
   return section;
 }

@@ -51,6 +51,12 @@ body {
   margin: -50em 5em -11em -15em;
   /* width: 140%; */
 }
+.image4 {
+  max-width: 140%; /* La imagen no será más ancha que su contenedor */
+  height: auto; /* La altura se ajustará proporcionalmente al ancho */
+  margin: -50em 5em -47em -15em;
+  /* width: 140%; */
+}
 .image3{
   max-width: 55%; /* La imagen no será más ancha que su contenedor */
   height: auto; /* La altura se ajustará proporcionalmente al ancho */
@@ -93,15 +99,12 @@ form input {
   background: #F4EFFD;
   border: 1.5px solid #0B0B0A;
 }
- .google-button {
-  position: relative;
-}
 
   .google {
     position: flex;
     left: 50%; /* Centra el elemento horizontalmente */
-    top: 50%; /* Centra el elemento verticalmente */
-    transform: translate(70%, -120%); /* Centra el elemento precisamente */
+    top: 40%; /* Centra el elemento verticalmente */
+    transform: translate(50%, 775%); /* Centra el elemento precisamente */
     width: 11%; /* Ajusta el ancho en porcentaje */
     max-width: 200px; /* Establece un límite máximo de ancho */
 }
@@ -211,7 +214,7 @@ hr {
   .title1{
     margin: -8em 1em 20em 5em;
   }
-    .slogan{
+  .slogan{
       margin: -1em 2em 18em 8em;
       font-size: 3rem;
   }
@@ -226,14 +229,21 @@ hr {
     margin: -48em 6em -1em 8em;
     /* width: 140%; */
   }
+  .image4 {
+    max-width: 80%; 
+    height: auto; 
+    margin: -48em 6em -1em 8em;
+    /* width: 140%; */
+  }
   .contenido{
     margin: -6em 6em -12em -45em;
 }
 /* -------register----------*/
 .returnbtn {
-  padding: 6px 6px; /* Reducir el padding aún más */
+  padding: 10px 10px; /* Reducir el padding aún más */
   font-size: 0.8em; /* Reducir el tamaño de fuente aún más */
-  left:53% ;
+  left:45% ;
+  top: 51%;
 }
 .allRegister{
   margin: -6em 6em -12em -45em;
@@ -259,8 +269,14 @@ hr {
   .image1 {
     max-width: 60%; 
     height: auto; 
+    margin: -50em 6em -1em 18em;
+  }
+  .image4 {
+    max-width: 60%; 
+    height: auto; 
     margin: -48em 6em -1em 18em;
   }
+  
   }
 
 

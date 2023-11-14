@@ -25,7 +25,7 @@ export function register(navigateTo) {
 
   const imgMujeres = document.createElement('img');
   imgMujeres.setAttribute('alt', 'mujer');
-  imgMujeres.setAttribute('class', 'image1');
+  imgMujeres.setAttribute('class', 'image4');
   imgMujeres.setAttribute('src', MujerSpace);
   container3.appendChild(imgMujeres);
 

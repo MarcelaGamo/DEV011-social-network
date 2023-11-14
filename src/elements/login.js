@@ -1,5 +1,8 @@
 import { authGoogle, loginEmail } from '../auth.js';
 
+import MujerSpace from '../img/MujerSpace.png';
+import logoGoogle from '../img/logoGoogle.png';
+
 export function login(navigateTo) {
   const container1 = document.createElement('div');
   container1.setAttribute('class', 'container flex');
@@ -30,7 +33,8 @@ export function login(navigateTo) {
   const imgMujeres = document.createElement('img');
   imgMujeres.setAttribute('alt', 'mujer');
   imgMujeres.setAttribute('class', 'image1');
-  imgMujeres.src = 'img/Mujer -Space_-2.png';
+  imgMujeres.setAttribute('src', MujerSpace);
+  container3.appendChild(imgMujeres);
 
   const links = document.createElement('form');
   links.setAttribute('action', '#');
@@ -90,7 +94,8 @@ export function login(navigateTo) {
   const imgGoogle = document.createElement('img');
   imgGoogle.setAttribute('class', 'google');
   imgGoogle.setAttribute('alt', 'logo-google');
-  imgGoogle.src = 'img/logo_google_icon_143197.png';
+  imgGoogle.setAttribute('src', logoGoogle);
+  links.appendChild(imgGoogle);
 
   const container4 = document.createElement('div');
   container4.setAttribute('class', 'button');
@@ -111,7 +116,6 @@ export function login(navigateTo) {
     buttonLogin,
     or,
     buttonGoogle,
-    imgGoogle,
     buttonNewAccount,
   );
   container2.append(container3, linkButton, container4, links);
